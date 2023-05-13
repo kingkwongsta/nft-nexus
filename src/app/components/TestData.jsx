@@ -23,14 +23,14 @@ const TestData = () => {
 
   const renderNftCard = () => {
     nftData.map((item) => {
-      <NftCard key={item._id} nft={item.contract} />;
+      return <NftCard key={item._id} nft={item.contract} />;
     });
   };
 
   return <div>{loading ? <p>Loading...</p> : renderNftCard()}</div>;
 };
 
-export default TestData;
+export default TestDataaaaa;
 
 const NftCard = ({ nft }) => {
   console.log(nft);
