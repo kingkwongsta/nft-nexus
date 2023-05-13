@@ -33,5 +33,6 @@ const TestData = () => {
 export default TestData;
 
 const NftCard = ({ nft }) => {
+  console.log(nft);
   return <div>{nft.name}</div>;
 };
