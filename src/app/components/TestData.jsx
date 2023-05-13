@@ -30,7 +30,7 @@ const TestData = () => {
   return <div>{loading ? <p>Loading...</p> : renderNftCard()}</div>;
 };
 
-export default TestDataaaaa;
+export default TestData;
 
 const NftCard = ({ nft }) => {
   console.log(nft);
