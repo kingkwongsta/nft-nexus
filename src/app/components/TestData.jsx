@@ -7,10 +7,12 @@ const NftCard = ({ nft }) => {
 };
 
 const TestData = () => {
+  console.log("run");
   const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("useEffect");
     fetchData();
   }, []);
 
@@ -34,7 +36,7 @@ const TestData = () => {
     });
   };
 
-  return <div>{loading ? <p>Loading...</p> : renderNftCard()}</div>;
+  return <div>{loading ? <p>LOADING...</p> : renderNftCard()}</div>;
 };
 
 export default TestData;
