@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+// import { getData } from "./../../../lib/mongo/web3/top_nft_eth";
 
 const NftCard = ({ nft }) => {
   console.log(nft);
@@ -19,7 +20,7 @@ const NftCard = ({ nft }) => {
   );
 };
 
-const TestData = () => {
+const Test = () => {
   const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +30,8 @@ const TestData = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("api/web3/nft-top-eth");
+      const { response } = await getData();
+      //   const response = await fetch("api/web3/nft-top-eth");
       const jsonData = await response.json();
       console.log(jsonData);
       setNftData(jsonData);
@@ -46,10 +48,10 @@ const TestData = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid grid-cols- gap-5">
       {loading ? <p>LOADING...</p> : renderNftCard()}
     </div>
   );
 };
 
-export default TestData;
+export default Test;
