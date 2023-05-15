@@ -1,6 +1,6 @@
-"use client";
 import { Suspense } from "react";
 import Image from "next/image";
+import { getData } from "./../../../lib/mongo/web3/top_nft_eth";
 
 const NftCard = ({ nft }) => {
   console.log(nft);
@@ -20,17 +20,17 @@ const NftCard = ({ nft }) => {
 };
 
 async function RenderNftCard() {
-  // let response, jsonData
+  let response, jsonData;
 
-  // try {
-  //   response = await fetch("api/web3/nft-top-eth");
-  //   jsonData = await response.json();
-  // } catch (error) {
-  //   console.error(error);
-  // }
+  //   try {
+  //     response = await fetch("api/web3/nft-top-eth");
+  //     jsonData = await response.json();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
 
-  const response = await fetch("api/web3/nft-top-eth");
-  const jsonData = await response.json();
+  response = await fetch("api/web3/nft-top-eth");
+  jsonData = await response.json();
 
   return (
     <>
