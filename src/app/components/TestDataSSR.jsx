@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { Suspense } from "react";
 import Image from "next/image";
 
 const NftCard = ({ nft }) => {
@@ -19,37 +19,34 @@ const NftCard = ({ nft }) => {
   );
 };
 
-const TestData = () => {
-  const [nftData, setNftData] = useState();
-  const [loading, setLoading] = useState(true);
+async function RenderNftCard() {
+  // let response, jsonData
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // try {
+  //   response = await fetch("api/web3/nft-top-eth");
+  //   jsonData = await response.json();
+  // } catch (error) {
+  //   console.error(error);
+  // }
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch("api/web3/nft-top-eth");
-      const jsonData = await response.json();
-      console.log(jsonData);
-      setNftData(jsonData);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const renderNftCard = () => {
-    return nftData.map((item) => {
-      return <NftCard key={item._id} nft={item.contract} />;
-    });
-  };
+  const response = await fetch("api/web3/nft-top-eth");
+  const jsonData = await response.json();
 
   return (
-    <div className="grid grid-cols- gap-5">
-      {loading ? <p>LOADING...</p> : renderNftCard()}
+    <>
+      {jsonData.map((item) => {
+        return <NftCard key={item._id} nft={item.contract} />;
+      })}
+    </>
+  );
+}
+
+export default function TestDataSSR() {
+  return (
+    <div className="">
+      <Suspense fallback={<h2>No Data</h2>}>
+        <RenderNftCard />
+      </Suspense>
     </div>
   );
-};
-
-export default TestData;
+}
