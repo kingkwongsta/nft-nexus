@@ -4,7 +4,7 @@ import TestData from "./components/testData";
 export default function Home() {
   return (
     <main>
-      <h2>Hello World</h2>
+      <h2>Hello</h2>
       <TestData />
     </main>
   );

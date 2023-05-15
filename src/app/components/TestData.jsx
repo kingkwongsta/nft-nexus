@@ -1,6 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
+const NftCard = ({ nft }) => {
+  console.log(nft);
+  return <div>{nft.name}</div>;
+};
+
 const TestData = () => {
   const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
@@ -10,6 +15,7 @@ const TestData = () => {
   }, []);
 
   const fetchData = async () => {
+    console.log("fetch data is running");
     try {
       const response = await fetch("api/web3/nft-top-eth");
       const jsonData = await response.json();
@@ -22,7 +28,8 @@ const TestData = () => {
   };
 
   const renderNftCard = () => {
-    nftData.map((item) => {
+    console.log("state date is: ", nftData);
+    return nftData.map((item) => {
       return <NftCard key={item._id} nft={item.contract} />;
     });
   };
@@ -31,8 +38,3 @@ const TestData = () => {
 };
 
 export default TestData;
-
-const NftCard = ({ nft }) => {
-  console.log(nft);
-  return <div>{nft.name}</div>;
-};
