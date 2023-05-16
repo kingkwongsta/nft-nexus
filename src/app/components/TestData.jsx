@@ -46,7 +46,7 @@ const TestData = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid grid-cols- gap-5">
       {loading ? <p>LOADING...</p> : renderNftCard()}
     </div>
   );
