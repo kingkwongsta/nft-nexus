@@ -1,20 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Card from "@mui/material/Card";
 
 const NftCard = ({ nft }) => {
   console.log(nft);
   return (
     <div>
-      <div>
+      <Card>
         <Image
           src={nft.metadata.cached_thumbnail_url}
           width={200}
           height={200}
           alt="collection image"
         />
-      </div>
-      <h2>{nft.name}</h2>
+        <h2>{nft.name}</h2>
+      </Card>
     </div>
   );
 };

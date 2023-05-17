@@ -8,7 +8,8 @@ export default function Home() {
     <main>
       <h2>Hello</h2>
       {/* <Test /> */}
-      <TestDataSSR />
+      {/* <TestDataSSR /> */}
+      <TestData />
     </main>
   );
 }
