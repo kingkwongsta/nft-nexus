@@ -2,21 +2,24 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Card from "@mui/material/Card";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const NftCard = ({ nft }) => {
   console.log(nft);
   return (
-    <div>
-      <Card>
-        <Image
-          src={nft.metadata.cached_thumbnail_url}
-          width={200}
-          height={200}
-          alt="collection image"
-        />
-        <h2>{nft.name}</h2>
-      </Card>
-    </div>
+    <Grid item>
+      <Item>
+        <Card>
+          <Image
+            src={nft.metadata.cached_thumbnail_url}
+            width={200}
+            height={200}
+            alt="collection image"
+          />
+          <h2>{nft.name}</h2>
+        </Card>
+      </Item>
+    </Grid>
   );
 };
 
@@ -47,9 +50,9 @@ const TestData = () => {
   };
 
   return (
-    <div className="grid grid-cols- gap-5">
+    <Grid container className="grid grid-cols- gap-5">
       {loading ? <p>LOADING...</p> : renderNftCard()}
-    </div>
+    </Grid>
   );
 };
 
