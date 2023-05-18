@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Card from "@mui/material/Card";
 import Grid from "@mui/material/Unstable_Grid2";
+import Paper from "@mui/material/Paper";
 
 const NftCard = ({ nft }) => {
   console.log(nft);
   return (
-    <Grid item>
-      <Card>
+    <Grid item md>
+      <Paper>
         <Image
           src={nft.metadata.cached_thumbnail_url}
           width={200}
@@ -16,7 +16,7 @@ const NftCard = ({ nft }) => {
           alt="collection image"
         />
         <h2>{nft.name}</h2>
-      </Card>
+      </Paper>
     </Grid>
   );
 };
@@ -42,16 +42,16 @@ const TestData = () => {
   };
 
   const renderNftCard = () => {
-    return nftData.map((item) => {
-      return <NftCard key={item._id} nft={item.contract} />;
-    });
+    return (
+      <Grid container className="grid grid-cols- gap-5">
+        {nftData.map((item) => {
+          return <NftCard key={item._id} nft={item.contract} />;
+        })}
+      </Grid>
+    );
   };
 
-  return (
-    <Grid container className="grid grid-cols- gap-5">
-      {loading ? <p>LOADING...</p> : renderNftCard()}
-    </Grid>
-  );
+  return <div>{loading ? <p>LOADING...</p> : renderNftCard()}</div>;
 };
 
 export default TestData;
