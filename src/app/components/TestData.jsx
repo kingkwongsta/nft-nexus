@@ -8,13 +8,16 @@ const NftCard = ({ nft }) => {
   console.log(nft);
   return (
     <Grid item md={3}>
-      <Paper>
-        <Image
-          src={nft.metadata.cached_thumbnail_url}
-          width={200}
-          height={200}
-          alt="collection image"
-        />
+      <Paper elevation={1} className="flex flex-col items-center">
+        <div className="min-w-[200px] min-h-[200px]">
+          <Image
+            className="object-cover h-[200px]"
+            src={nft.metadata.cached_thumbnail_url}
+            width={200}
+            height={200}
+            alt="collection image"
+          />
+        </div>
         <h2>{nft.name}</h2>
       </Paper>
     </Grid>
