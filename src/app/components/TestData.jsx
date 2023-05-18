@@ -7,7 +7,7 @@ import Paper from "@mui/material/Paper";
 const NftCard = ({ nft }) => {
   console.log(nft);
   return (
-    <Grid item md>
+    <Grid item md={3}>
       <Paper>
         <Image
           src={nft.metadata.cached_thumbnail_url}
