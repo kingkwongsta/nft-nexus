@@ -4,12 +4,5 @@ import TestDataSSR from "./components/TestDataSSR";
 import Test from "./components/Test";
 
 export default function Home() {
-  return (
-    <main>
-      <h2>Hello</h2>
-      {/* <Test /> */}
-      {/* <TestDataSSR /> */}
-      <TestData />
-    </main>
-  );
+  return <main></main>;
 }
