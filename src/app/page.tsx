@@ -1,8 +1,9 @@
-import Image from "next/image";
-import TestData from "./components/TestData";
-import TestDataSSR from "./components/TestDataSSR";
-import Test from "./components/Test";
+import Popular from "./components/popular/Popular";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <Popular />
+    </main>
+  );
 }

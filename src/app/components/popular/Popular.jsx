@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import NftCard from "./NftCard";
+import PopularCard from "./PopularCard";
 import Grid from "@mui/material/Unstable_Grid2";
 
 const Popular = () => {
@@ -27,7 +27,7 @@ const Popular = () => {
     return (
       <Grid container className="grid grid-cols- gap-5">
         {nftData.map((item) => {
-          return <NftCard key={item._id} nft={item.contract} />;
+          return <PopularCard key={item._id} nft={item.contract} />;
         })}
       </Grid>
     );
@@ -36,4 +36,4 @@ const Popular = () => {
   return <div>{loading ? <p>LOADING...</p> : renderNftCard()}</div>;
 };
 
-export default TestData;
+export default Popular;
