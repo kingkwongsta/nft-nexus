@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Paper } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
-const NftCard = ({ nft }) => {
+const PopularCard = ({ nft }) => {
   console.log(nft);
   return (
     <Grid item md={3}>
@@ -21,3 +21,5 @@ const NftCard = ({ nft }) => {
     </Grid>
   );
 };
+
+export default PopularCard;
