@@ -8,10 +8,10 @@ const PopularCard = ({ collection, nfts }) => {
   console.log("hello");
   console.log(getRandomImage());
   return (
-    <div className="flex flex-col items-center max-w-[250px]">
+    <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
       <div className="min-w-[200px] min-h-[200px]">
         <Image
-          className="object-cover h-[200px] mb-4 mt-6 rounded-md"
+          className="object-cover h-[200px] mb-4 mt-2 rounded-md"
           src={collection.metadata.cached_thumbnail_url}
           width={200}
           height={200}
