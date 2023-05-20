@@ -1,15 +1,9 @@
-import Image from "next/image";
-import TestData from "./components/TestData";
-import TestDataSSR from "./components/TestDataSSR";
-import Test from "./components/Test";
+import Popular from "./components/popular/Popular";
 
 export default function Home() {
   return (
-    <main>
-      <h2>Hello</h2>
-      {/* <Test /> */}
-      {/* <TestDataSSR /> */}
-      <TestData />
+    <main className="flex flex-col items-center justify-center">
+      <Popular />
     </main>
   );
 }
