@@ -10,20 +10,18 @@ const PopularCard = ({ collection, nfts }) => {
   console.log("hello");
   console.log(getRandomImage());
   return (
-    <Grid item xs={8} sm={5} md={4} lg={2}>
-      <Paper elevation={1} className="flex flex-col items-center max-w-[250px]">
-        <div className="min-w-[200px] min-h-[200px]">
-          <Image
-            className="object-cover h-[200px] mb-4 mt-6 rounded-md"
-            src={collection.metadata.cached_thumbnail_url}
-            width={200}
-            height={200}
-            alt="collection image"
-          />
-        </div>
-        <h2 className="text-lg font-medium mb-2">{collection.name}</h2>
-      </Paper>
-    </Grid>
+    <Paper elevation={1} className="flex flex-col items-center max-w-[250px]">
+      <div className="min-w-[200px] min-h-[200px]">
+        <Image
+          className="object-cover h-[200px] mb-4 mt-6 rounded-md"
+          src={collection.metadata.cached_thumbnail_url}
+          width={200}
+          height={200}
+          alt="collection image"
+        />
+      </div>
+      <h2 className="text-lg font-medium mb-2">{collection.name}</h2>
+    </Paper>
   );
 };
 
