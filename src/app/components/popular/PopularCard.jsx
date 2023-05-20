@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Paper } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
 
 const PopularCard = ({ collection, nfts }) => {
   function getRandomImage() {
@@ -10,7 +8,7 @@ const PopularCard = ({ collection, nfts }) => {
   console.log("hello");
   console.log(getRandomImage());
   return (
-    <Paper elevation={1} className="flex flex-col items-center max-w-[250px]">
+    <div className="flex flex-col items-center max-w-[250px]">
       <div className="min-w-[200px] min-h-[200px]">
         <Image
           className="object-cover h-[200px] mb-4 mt-6 rounded-md"
@@ -21,7 +19,7 @@ const PopularCard = ({ collection, nfts }) => {
         />
       </div>
       <h2 className="text-lg font-medium mb-2">{collection.name}</h2>
-    </Paper>
+    </div>
   );
 };
 
