@@ -1,6 +1,17 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const PopularCard = ({ collection, nfts }) => {
+  const [showImage2, setShowImage2] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowImage2(true);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   function getRandomImage() {
     const random_number = Math.floor(Math.random() * 40) + 1;
     return nfts[random_number].metadata;
