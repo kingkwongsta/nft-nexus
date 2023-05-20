@@ -1,57 +1,41 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-// import { getData } from "./../../../lib/mongo/web3/top_nft_eth";
+import { useState } from "react";
+import Cat from "./../../../public/cat.avif";
+import Cat2 from "./../../../public/cat2.avif";
 
-const NftCard = ({ nft }) => {
-  console.log(nft);
-  return (
-    <div>
-      <div>
-        <Image
-          src={nft.metadata.cached_thumbnail_url}
-          width={200}
-          height={200}
-          alt="collection image"
-        />
-      </div>
-      <h2>{nft.name}</h2>
-    </div>
-  );
-};
+function Test() {
+  const [isImage1Visible, setIsImage1Visible] = useState(true);
 
-const Test = () => {
-  const [nftData, setNftData] = useState();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const { response } = await getData();
-      //   const response = await fetch("api/web3/nft-top-eth");
-      const jsonData = await response.json();
-      console.log(jsonData);
-      setNftData(jsonData);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const renderNftCard = () => {
-    return nftData.map((item) => {
-      return <NftCard key={item._id} nft={item.contract} />;
-    });
+  const toggleImage = () => {
+    setIsImage1Visible(!isImage1Visible);
   };
 
   return (
-    <div className="grid grid-cols- gap-5">
-      {loading ? <p>LOADING...</p> : renderNftCard()}
+    <div className="relative w-200 h-200">
+      {isImage1Visible ? (
+        //   <img
+        //     src={Cat}
+        //     alt="Image 1"
+        //     className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
+        //   />
+        // ) : (
+        //   <img
+        //     src={Cat2}
+        //     alt="Image 2"
+        //     className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
+        //   />
+        <div className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+          Hello
+        </div>
+      ) : (
+        <div className=" transition duration-5000">World</div>
+      )}
+
+      <button className="m-5 px-4 py-2 rounded" onClick={toggleImage}>
+        Toggle Image
+      </button>
     </div>
   );
-};
+}
 
 export default Test;
