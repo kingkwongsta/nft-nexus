@@ -2,12 +2,12 @@ import Image from "next/image";
 import { Paper } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
-const PopularCard = ({ collection }) => {
+const PopularCard = ({ collection, nfts }) => {
   function getRandomImage() {
     const random_number = Math.floor(Math.random() * 40) + 1;
-    return nft;
+    return nfts[random_number].metadata;
   }
-
+  console.log(getRandomImage());
   console.log(collection);
   return (
     <Grid item xs={8} sm={5} md={4} lg={2}>
