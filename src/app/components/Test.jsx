@@ -24,11 +24,13 @@ function Test() {
         //     alt="Image 2"
         //     className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000"
         //   />
-        <div className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+        <div className="bg-orange-500 transition ease-in-out delay-5000 duration-5000 hover:ease-in">
           Hello
         </div>
       ) : (
-        <div className=" transition duration-5000">World</div>
+        <div className="bg-slate-600 transition ease-in-out delay-5000 duration-5000 hover:ease-in">
+          World
+        </div>
       )}
 
       <button className="m-5 px-4 py-2 rounded" onClick={toggleImage}>
