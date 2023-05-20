@@ -7,8 +7,8 @@ const PopularCard = ({ collection, nfts }) => {
     const random_number = Math.floor(Math.random() * 40) + 1;
     return nfts[random_number].metadata;
   }
+  console.log("hello");
   console.log(getRandomImage());
-  console.log(collection);
   return (
     <Grid item xs={8} sm={5} md={4} lg={2}>
       <Paper elevation={1} className="flex flex-col items-center max-w-[250px]">
