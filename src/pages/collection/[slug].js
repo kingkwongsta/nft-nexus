@@ -12,8 +12,13 @@ export default function Page() {
   }, []);
 
   const fetchData = async () => {
+    const options = {
+      headers: {
+        collection: router.query.slug,
+      },
+    };
     try {
-      const res = await fetch("/api/web3/collection");
+      const res = await fetch("/api/web3/collection", options);
       const data = await res.json();
       setCollectionData(data);
       console.log(data);
