@@ -1,6 +1,11 @@
 import { useRouter } from "next/router";
 
-export default function Page() {
+export default function Page({ collection }) {
   const router = useRouter();
-  return <p>Collection: {router.query.slug}</p>;
+  console.log(collection);
+  return (
+    <div>
+      <p>Collection: {router.query.slug}</p>
+    </div>
+  );
 }
