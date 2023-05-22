@@ -39,6 +39,7 @@ const Popular = () => {
     );
   };
 
+  //JSX To Return
   return <div>{loading ? <p>LOADING...</p> : renderNftCard()}</div>;
 };
 
