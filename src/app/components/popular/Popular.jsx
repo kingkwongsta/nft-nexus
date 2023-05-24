@@ -23,9 +23,19 @@ const Popular = () => {
   };
 
   const renderNftCard = () => {
+    //randomize order of nftData
+    const shuffledNFTData = [...nftData];
+    for (let i = shuffledNFTData.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledNFTData[i], shuffledNFTData[j]] = [
+        shuffledNFTData[j],
+        shuffledNFTData[i],
+      ];
+    }
+
     return (
       <div className="grid grid-cols-3 gap-10">
-        {nftData
+        {shuffledNFTData
           .filter(
             (item) => item.contract.metadata.cached_thumbnail_url !== null
           )
