@@ -26,13 +26,7 @@ const Popular = () => {
     return (
       <div className="grid grid-cols-3 gap-10">
         {nftData.map((item) => {
-          return (
-            <PopularCard
-              key={item._id}
-              collection={item.contract}
-              nfts={item.nfts}
-            />
-          );
+          return <PopularCard key={item._id} collection={item.contract} />;
         })}
       </div>
     );
