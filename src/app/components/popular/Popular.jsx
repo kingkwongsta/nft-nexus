@@ -40,7 +40,13 @@ const Popular = () => {
             (item) => item.contract.metadata.cached_thumbnail_url !== null
           )
           .map((item) => {
-            return <PopularCard key={item._id} collection={item.contract} />;
+            return (
+              <PopularCard
+                key={item._id}
+                collection={item.contract}
+                nfts={item.nfts}
+              />
+            );
           })}
       </div>
     );
