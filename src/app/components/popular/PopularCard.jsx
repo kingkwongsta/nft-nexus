@@ -5,7 +5,14 @@ import Link from "next/link";
 const PopularCard = ({ collection, nfts }) => {
   return (
     <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
-      <Link href={`/collection/${collection.name}`}>
+      {/* <Link href={`/collection/${collection.name}`}> */}
+      <Link
+        href={{
+          pathname: "{`/collection/${collection.name}`}",
+          query: { nfts },
+        }}
+        as={`/collection/${collection.name}`}
+      >
         <div className="min-w-[200px] min-h-[200px]">
           <Image
             className="object-cover h-[200px] mb-4 mt-2 rounded-md"
