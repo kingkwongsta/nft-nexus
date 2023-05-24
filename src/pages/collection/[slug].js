@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 // import { useRouter } from "next/router";
 // import Image from "next/image";
 // import { useEffect, useState } from "react";
@@ -59,32 +59,19 @@
 // }
 
 import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
-const Collection = ({ nfts }) => {
+const Collection = () => {
   const router = useRouter();
-
-  // Render the component using the collection data
+  const data = router.query;
+  const searchParams = useSearchParams();
+  console.log(searchParams.get("search"));
 
   return (
     <div>
-      <h1>Collection: {nfts[0].metadata.name}</h1>
-      {/* Render the collection details */}
+      <h1>Collection: </h1>
     </div>
   );
 };
-
-export async function getServerSideProps(context) {
-  const { params } = context;
-  const collectionName = params.name;
-
-  // Fetch the collection data based on the name
-  const collection = await fetchCollectionData(collectionName);
-
-  return {
-    props: {
-      nfts,
-    },
-  };
-}
 
 export default Collection;
