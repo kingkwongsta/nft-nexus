@@ -16,7 +16,7 @@ const Popular = () => {
       const response = await fetch("api/web3/nft-top-eth");
       const jsonData = await response.json();
       setNftData(jsonData);
-      setLoading(false);
+      setLoading(!loading);
     } catch (error) {
       console.error(error);
     }
@@ -25,9 +25,13 @@ const Popular = () => {
   const renderNftCard = () => {
     return (
       <div className="grid grid-cols-3 gap-10">
-        {nftData.map((item) => {
-          return <PopularCard key={item._id} collection={item.contract} />;
-        })}
+        {nftData
+          .filter(
+            (item) => item.contract.metadata.cached_thumbnail_url !== null
+          )
+          .map((item) => {
+            return <PopularCard key={item._id} collection={item.contract} />;
+          })}
       </div>
     );
   };
