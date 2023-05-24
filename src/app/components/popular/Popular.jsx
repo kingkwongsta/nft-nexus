@@ -15,7 +15,6 @@ const Popular = () => {
     try {
       const response = await fetch("api/web3/nft-top-eth");
       const jsonData = await response.json();
-      console.log(jsonData);
       setNftData(jsonData);
       setLoading(false);
     } catch (error) {
@@ -41,6 +40,7 @@ const Popular = () => {
 
   //JSX To Return
   return <div>{loading ? <p>LOADING...</p> : renderNftCard()}</div>;
+  // return <div>{loading ? <p>LOADING...</p> : "hello"}</div>;
 };
 
 export default Popular;

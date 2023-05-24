@@ -4,21 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PopularCard = ({ collection, nfts }) => {
-  const [showImage2, setShowImage2] = useState(false);
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowImage2(true);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  function getRandomImage() {
-    const random_number = Math.floor(Math.random() * 40) + 1;
-    return nfts[random_number].metadata;
-  }
-  console.log("hello");
-  console.log(getRandomImage());
   return (
     <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
       <Link href={`/collection/${collection.name}`}>
