@@ -35,21 +35,30 @@ const Popular = () => {
       ];
     }
 
+    function handleClick() {
+      console.log(topNftEth);
+    }
+
     return (
-      <div className="grid grid-cols-3 gap-10">
-        {shuffledNFTData
-          .filter(
-            (item) => item.contract.metadata.cached_thumbnail_url !== null
-          )
-          .map((item) => {
-            return (
-              <PopularCard
-                key={item._id}
-                collection={item.contract}
-                nfts={item.nfts}
-              />
-            );
-          })}
+      <div>
+        <button onClick={handleClick} className="m-5">
+          What is in Store?
+        </button>
+        <div className="grid grid-cols-3 gap-10">
+          {shuffledNFTData
+            .filter(
+              (item) => item.contract.metadata.cached_thumbnail_url !== null
+            )
+            .map((item) => {
+              return (
+                <PopularCard
+                  key={item._id}
+                  collection={item.contract}
+                  nfts={item.nfts}
+                />
+              );
+            })}
+        </div>
       </div>
     );
   };
