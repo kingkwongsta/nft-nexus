@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const Popular = () => {
   const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
-  const topNftEth = useSelector((state) => state.topEth);
+  const topNftEth = useSelector((state) => state.topNftEth);
 
   useEffect(() => {
     fetchData();
