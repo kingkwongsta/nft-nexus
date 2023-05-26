@@ -8,4 +8,5 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json({ error });
   }
+  // return new Response("Hello, Next.js!");
 }
