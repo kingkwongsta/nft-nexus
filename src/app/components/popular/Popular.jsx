@@ -1,13 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import PopularCard from "./PopularCard";
-import { useSelector } from "react-redux";
 
 //main component to export
 const Popular = () => {
   const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
-  const topNftEth = useSelector((state) => state.topNftEth);
 
   useEffect(() => {
     fetchData();

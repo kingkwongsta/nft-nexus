@@ -11,6 +11,7 @@ export const fetchInitialData = createAsyncThunk(
   "topEthNft/fetchInitialData",
   async () => {
     const response = await fetch("api/web3/nft-top-eth");
+    console.log("hello");
     const data = await response.json();
     return data;
   }
