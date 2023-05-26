@@ -24,7 +24,7 @@ const initialState: TopNftEthState = {
 };
 
 export const topNftEthSlice = createSlice({
-  name: "topNftEthData",
+  name: "topEth",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
