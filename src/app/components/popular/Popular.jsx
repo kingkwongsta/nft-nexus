@@ -21,39 +21,40 @@ const Popular = () => {
   }
 
   const renderNftCard = () => {
-    // //randomize order of nftData
-    // const shuffledNFTData = [...topNftEth.topNftEthData];
-    // for (let i = shuffledNFTData.length - 1; i > 0; i--) {
-    //   const j = Math.floor(Math.random() * (i + 1));
-    //   [shuffledNFTData[i], shuffledNFTData[j]] = [
-    //     shuffledNFTData[j],
-    //     shuffledNFTData[i],
-    //   ];
-    // }
+    //randomize order of nftData
+
     if (!topNftEth || !topNftEth.topNftEthData) {
       return <p>No data available</p>;
-    }
-    console.log(topNftEth.topNftEthData);
-    return (
-      <div>
-        <div className="grid grid-cols-3 gap-10">
-          {topNftEth.topNftEthData
-            .filter(
-              (item) => item.contract.metadata.cached_thumbnail_url !== null
-            )
-            .map((item) => {
-              return (
-                <PopularCard
-                  key={item._id}
-                  collection={item.contract}
-                  nfts={item.nfts}
-                />
-              );
-            })}
-          <h1>Hello World</h1>
+    } else {
+      const shuffledNFTData = [...topNftEth.topNftEthData];
+      for (let i = shuffledNFTData.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledNFTData[i], shuffledNFTData[j]] = [
+          shuffledNFTData[j],
+          shuffledNFTData[i],
+        ];
+      }
+      return (
+        <div>
+          <div className="grid grid-cols-3 gap-10">
+            {shuffledNFTData
+              .filter(
+                (item) => item.contract.metadata.cached_thumbnail_url !== null
+              )
+              .map((item) => {
+                return (
+                  <PopularCard
+                    key={item._id}
+                    collection={item.contract}
+                    nfts={item.nfts}
+                  />
+                );
+              })}
+            <h1>Hello World</h1>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   };
 
   //JSX To Return
