@@ -9,8 +9,9 @@ const Popular = () => {
   const [show, setShow] = useState(false);
   const topNftEth = useSelector((state) => state.topNftEth);
 
+  //once store data changes status to succeeded, change loading state
   useEffect(() => {
-    if (topNftEth.status) {
+    if (topNftEth.status == "succeeded") {
       setLoading(false);
     }
   }, [topNftEth.status]);
@@ -21,11 +22,10 @@ const Popular = () => {
   }
 
   const renderNftCard = () => {
-    //randomize order of nftData
-
     if (!topNftEth || !topNftEth.topNftEthData) {
       return <p>No data available</p>;
     } else {
+      //randomize order of nftData
       const shuffledNFTData = [...topNftEth.topNftEthData];
       for (let i = shuffledNFTData.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -57,19 +57,14 @@ const Popular = () => {
     }
   };
 
-  //JSX To Return
   return (
     <div>
-      {" "}
       <button onClick={handleClick} className="m-5">
         What is in Store?
       </button>
-      {/* {loading ? <p>LOADING...</p> : <p>Store has been updated</p>} */}
       {loading ? <p>LOADING...</p> : renderNftCard()}
-      {/* {show ? renderNftCard() : <p>LOADING...</p>} */}
     </div>
   );
-  // return <div>{loading ? <p>LOADING...</p> : "hello"}</div>;
 };
 
 export default Popular;
