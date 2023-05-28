@@ -7,6 +7,11 @@ import { fetchInitialData } from "@/redux/features/top-nft-eth/topNftEthSlice";
 
 export default function Home() {
   const topNftEth = useSelector((state) => state.topNftEth);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchInitialData());
+  }, []);
 
   return (
     <main className="flex flex-col items-center justify-center">
