@@ -36,7 +36,7 @@ const Popular = () => {
     }
 
     function handleClick() {
-      console.log(topNftEth);
+      console.log(topNftEth.topNftEthData);
     }
 
     return (
