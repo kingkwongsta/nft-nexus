@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import PopularCard from "./PopularCard";
-import { useSelector, connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 //main component to export
 const Popular = () => {
@@ -10,11 +10,10 @@ const Popular = () => {
   const topNftEth = useSelector((state) => state.topNftEth);
 
   useEffect(() => {
-    if (topNftEth) {
+    if (topNftEth.status) {
       setLoading(false);
     }
-    console.log("store has been updated");
-  }, [topNftEth]);
+  }, [topNftEth.status]);
 
   function handleClick() {
     console.log(topNftEth.topNftEthData);
@@ -31,27 +30,27 @@ const Popular = () => {
     //     shuffledNFTData[i],
     //   ];
     // }
-
+    if (!topNftEth || !topNftEth.topNftEthData) {
+      return <p>No data available</p>;
+    }
+    console.log(topNftEth.topNftEthData);
     return (
       <div>
         <div className="grid grid-cols-3 gap-10">
-          {topNftEth ? (
-            topNftEth.topNftEthData
-              .filter(
-                (item) => item.contract.metadata.cached_thumbnail_url !== null
-              )
-              .map((item) => {
-                return (
-                  <PopularCard
-                    key={item._id}
-                    collection={item.contract}
-                    nfts={item.nfts}
-                  />
-                );
-              })
-          ) : (
-            <p>no store data</p>
-          )}
+          {topNftEth.topNftEthData
+            .filter(
+              (item) => item.contract.metadata.cached_thumbnail_url !== null
+            )
+            .map((item) => {
+              return (
+                <PopularCard
+                  key={item._id}
+                  collection={item.contract}
+                  nfts={item.nfts}
+                />
+              );
+            })}
+          <h1>Hello World</h1>
         </div>
       </div>
     );
@@ -72,10 +71,4 @@ const Popular = () => {
   // return <div>{loading ? <p>LOADING...</p> : "hello"}</div>;
 };
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.topNftEth, // Example: mapping 'data' from the Redux store to 'data' prop
-  };
-};
-
-export default connect(mapStateToProps)(Popular);
+export default Popular;
