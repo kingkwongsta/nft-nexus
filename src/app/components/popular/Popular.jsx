@@ -7,11 +7,13 @@ import { useSelector } from "react-redux";
 const Popular = () => {
   const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
+  const [show, setShow] = useState(false);
   const topNftEth = useSelector((state) => state.topNftEth);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    // fetchData();
+    setLoading(false);
+  }, [topNftEth]);
 
   const fetchData = async () => {
     try {
@@ -23,10 +25,14 @@ const Popular = () => {
       console.error(error);
     }
   };
+  function handleClick() {
+    console.log(topNftEth.topNftEthData);
+    setShow(!show);
+  }
 
   const renderNftCard = () => {
     //randomize order of nftData
-    const shuffledNFTData = [...nftData];
+    const shuffledNFTData = [...topNftEth.topNftEthData];
     for (let i = shuffledNFTData.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffledNFTData[i], shuffledNFTData[j]] = [
@@ -35,17 +41,10 @@ const Popular = () => {
       ];
     }
 
-    function handleClick() {
-      console.log(topNftEth.topNftEthData);
-    }
-
     return (
       <div>
-        <button onClick={handleClick} className="m-5">
-          What is in Store?
-        </button>
         <div className="grid grid-cols-3 gap-10">
-          {shuffledNFTData
+          {topNftEth.topNftEthData
             .filter(
               (item) => item.contract.metadata.cached_thumbnail_url !== null
             )
@@ -64,7 +63,17 @@ const Popular = () => {
   };
 
   //JSX To Return
-  return <div>{loading ? <p>LOADING...</p> : renderNftCard()}</div>;
+  return (
+    <div>
+      {" "}
+      <button onClick={handleClick} className="m-5">
+        What is in Store?
+      </button>
+      {/* {loading ? <p>LOADING...</p> : <p>Store has been updated</p>} */}
+      {/* {loading ? <p>LOADING...</p> : renderNftCard()} */}
+      {show ? <p>LOADING...</p> : renderNftCard()}
+    </div>
+  );
   // return <div>{loading ? <p>LOADING...</p> : "hello"}</div>;
 };
 
