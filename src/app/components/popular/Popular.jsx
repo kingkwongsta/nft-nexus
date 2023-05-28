@@ -13,6 +13,7 @@ const Popular = () => {
   useEffect(() => {
     // fetchData();
     setLoading(false);
+    console.log("store has been updated");
   }, [topNftEth]);
 
   const fetchData = async () => {
@@ -31,32 +32,36 @@ const Popular = () => {
   }
 
   const renderNftCard = () => {
-    //randomize order of nftData
-    const shuffledNFTData = [...topNftEth.topNftEthData];
-    for (let i = shuffledNFTData.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledNFTData[i], shuffledNFTData[j]] = [
-        shuffledNFTData[j],
-        shuffledNFTData[i],
-      ];
-    }
+    // //randomize order of nftData
+    // const shuffledNFTData = [...topNftEth.topNftEthData];
+    // for (let i = shuffledNFTData.length - 1; i > 0; i--) {
+    //   const j = Math.floor(Math.random() * (i + 1));
+    //   [shuffledNFTData[i], shuffledNFTData[j]] = [
+    //     shuffledNFTData[j],
+    //     shuffledNFTData[i],
+    //   ];
+    // }
 
     return (
       <div>
         <div className="grid grid-cols-3 gap-10">
-          {topNftEth.topNftEthData
-            .filter(
-              (item) => item.contract.metadata.cached_thumbnail_url !== null
-            )
-            .map((item) => {
-              return (
-                <PopularCard
-                  key={item._id}
-                  collection={item.contract}
-                  nfts={item.nfts}
-                />
-              );
-            })}
+          {topNftEth == undefined ? (
+            <p>no store data</p>
+          ) : (
+            topNftEth.topNftEthData
+              .filter(
+                (item) => item.contract.metadata.cached_thumbnail_url !== null
+              )
+              .map((item) => {
+                return (
+                  <PopularCard
+                    key={item._id}
+                    collection={item.contract}
+                    nfts={item.nfts}
+                  />
+                );
+              })
+          )}
         </div>
       </div>
     );
@@ -70,8 +75,8 @@ const Popular = () => {
         What is in Store?
       </button>
       {/* {loading ? <p>LOADING...</p> : <p>Store has been updated</p>} */}
-      {/* {loading ? <p>LOADING...</p> : renderNftCard()} */}
-      {show ? <p>LOADING...</p> : renderNftCard()}
+      {loading ? <p>LOADING...</p> : renderNftCard()}
+      {/* {show ? renderNftCard() : <p>LOADING...</p>} */}
     </div>
   );
   // return <div>{loading ? <p>LOADING...</p> : "hello"}</div>;
