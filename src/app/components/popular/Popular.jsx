@@ -1,31 +1,21 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import PopularCard from "./PopularCard";
-import { useSelector } from "react-redux";
+import { useSelector, connect } from "react-redux";
 
 //main component to export
 const Popular = () => {
-  const [nftData, setNftData] = useState();
   const [loading, setLoading] = useState(true);
   const [show, setShow] = useState(false);
   const topNftEth = useSelector((state) => state.topNftEth);
 
   useEffect(() => {
-    // fetchData();
-    setLoading(false);
+    if (topNftEth) {
+      setLoading(false);
+    }
     console.log("store has been updated");
   }, [topNftEth]);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch("api/web3/nft-top-eth");
-      const jsonData = await response.json();
-      setNftData(jsonData);
-      setLoading(!loading);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   function handleClick() {
     console.log(topNftEth.topNftEthData);
     setShow(!show);
@@ -45,9 +35,7 @@ const Popular = () => {
     return (
       <div>
         <div className="grid grid-cols-3 gap-10">
-          {topNftEth == undefined ? (
-            <p>no store data</p>
-          ) : (
+          {topNftEth ? (
             topNftEth.topNftEthData
               .filter(
                 (item) => item.contract.metadata.cached_thumbnail_url !== null
@@ -61,6 +49,8 @@ const Popular = () => {
                   />
                 );
               })
+          ) : (
+            <p>no store data</p>
           )}
         </div>
       </div>
@@ -82,4 +72,10 @@ const Popular = () => {
   // return <div>{loading ? <p>LOADING...</p> : "hello"}</div>;
 };
 
-export default Popular;
+const mapStateToProps = (state) => {
+  return {
+    data: state.topNftEth, // Example: mapping 'data' from the Redux store to 'data' prop
+  };
+};
+
+export default connect(mapStateToProps)(Popular);
