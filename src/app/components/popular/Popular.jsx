@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 //main component to export
 const Popular = () => {
   const [loading, setLoading] = useState(true);
-  const [show, setShow] = useState(false);
   const topNftEth = useSelector((state) => state.topNftEth);
 
   //once store data changes status to succeeded, change loading state
@@ -15,11 +14,6 @@ const Popular = () => {
       setLoading(false);
     }
   }, [topNftEth.status]);
-
-  function handleClick() {
-    console.log(topNftEth.topNftEthData);
-    setShow(!show);
-  }
 
   const renderNftCard = () => {
     if (!topNftEth || !topNftEth.topNftEthData) {
@@ -56,12 +50,17 @@ const Popular = () => {
       );
     }
   };
+  // DEBUGGING: What is in state
+  // function handleClick() {
+  //   console.log(topNftEth.topNftEthData);
+  //   setShow(!show);
+  // }
 
   return (
     <div>
-      <button onClick={handleClick} className="m-5">
+      {/* <button onClick={handleClick} className="m-5">
         What is in Store?
-      </button>
+      </button> */}
       {loading ? <p>LOADING...</p> : renderNftCard()}
     </div>
   );
