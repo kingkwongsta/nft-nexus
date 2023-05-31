@@ -1,13 +1,11 @@
 "use client";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import Providers from "./../../redux/provider";
+import Test from "./../../app/components/Test";
 
 export default function Page() {
-  const [collectionData, setCollectionData] = useState();
   const router = useRouter();
-  const topNftEth = useSelector((state) => state.topNftEth);
 
   function renderCollectionGallery() {
     return collectionData.nfts.map((nft, index) => {
@@ -27,6 +25,9 @@ export default function Page() {
       <button onClick={getState} className="m-5">
         click me
       </button>
+      <Providers>
+        <Test />
+      </Providers>
     </div>
   );
 }
