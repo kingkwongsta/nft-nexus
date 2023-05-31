@@ -7,12 +7,15 @@ import { useSelector } from "react-redux";
 export default function Page() {
   const [collectionData, setCollectionData] = useState();
   const router = useRouter();
-  // const topNftEth = useSelector((state) => state.topNftEth);
+  const topNftEth = useSelector((state) => state.topNftEth);
 
   function renderCollectionGallery() {
     return collectionData.nfts.map((nft, index) => {
       return <Gallery key={index} nft={nft} />;
     });
+  }
+  function getState() {
+    console.log(topNftEth);
   }
 
   return (
@@ -21,6 +24,9 @@ export default function Page() {
       {/* {collectionData ? renderCollectionGallery() : <p>no data</p>} */}
       {/* <p>{topNftEth[0].contract.name}</p> */}
       <p>hello worldz</p>
+      <button onClick={getState} className="m-5">
+        click me
+      </button>
     </div>
   );
 }
