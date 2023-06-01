@@ -20,16 +20,10 @@ export default function Page() {
 
   return (
     <div>
-      {/* <p>Collection: {router.query.slug}</p> */}
-      {/* {collectionData ? renderCollectionGallery() : <p>no data</p>} */}
-      {/* <p>{topNftEth[0].contract.name}</p> */}
       <p>hello worldz</p>
       <button onClick={getState} className="m-5">
         click me
       </button>
-      {/* <Providers>
-        <Test />
-      </Providers> */}
     </div>
   );
 }
