@@ -1,8 +1,6 @@
 "use client";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Providers } from "./../../redux/provider";
-import Test from "./../../app/components/Test";
 import { useSelector } from "react-redux";
 
 export default function Page() {
