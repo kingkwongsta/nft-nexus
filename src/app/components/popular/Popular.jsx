@@ -41,6 +41,7 @@ const Popular = () => {
               .filter(
                 (item) => item.contract.metadata.cached_thumbnail_url !== null
               )
+              .filter((item, index) => index < 20)
               .map((item) => {
                 return (
                   <PopularCard
