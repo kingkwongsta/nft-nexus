@@ -3,37 +3,20 @@ import PopularCard from "./PopularCard";
 
 //main component to export
 const Popular = () => {
+  const numCards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const renderNftCard = () => {
     return (
       <div>
         <div className="grid grid-cols-3 gap-10">
-          {shuffledNFTData
-            .filter(
-              (item) => item.contract.metadata.cached_thumbnail_url !== null
-            )
-            .map((item) => {
-              return (
-                <PopularCard
-                  key={item._id}
-                  collection={item.contract}
-                  nfts={item.nfts}
-                />
-              );
-            })}
-          <h1>Hello World</h1>
+          {renderNftCard.map((x, index) => {
+            return <PopularCard key={index} />;
+          })}
         </div>
       </div>
     );
   };
 
-  return (
-    <div>
-      {/* <button onClick={handleClick} className="m-5">
-        What is in Store?
-      </button> */}
-      {loading ? <p>LOADING...</p> : renderNftCard()}
-    </div>
-  );
+  return <div>renderNftCard()</div>;
 };
 
 export default Popular;
