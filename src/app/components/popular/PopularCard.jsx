@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const PopularCard = ({ collection, nfts }) => {
   return (
-    <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
+    <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[3px] px-3 py-1 border-[#049DBF] drop-shadow-[2px_2px_8px_rgba(3,103,166,1)]">
       {/* <Link href={`/collection/${collection.name}`}> */}
       <Link
         href={{
@@ -22,7 +22,9 @@ const PopularCard = ({ collection, nfts }) => {
             alt={collection.name}
           />
         </div>
-        <h2 className="text-lg font-medium mb-2">{collection.name}</h2>
+        <h2 className="text-lg text-center font-medium mb-2 text-[#ffffff]">
+          {collection.name}
+        </h2>
       </Link>
     </div>
   );

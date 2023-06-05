@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import PopularCard from "./PopularCard";
+import PopularTemp from "./PopularTemp";
 import { useSelector, useDispatch } from "react-redux";
 
 //main component to export
@@ -61,7 +62,7 @@ const Popular = () => {
       {/* <button onClick={handleClick} className="m-5">
         What is in Store?
       </button> */}
-      {loading ? <p>LOADING...</p> : renderNftCard()}
+      {loading ? <PopularTemp /> : renderNftCard()}
     </div>
   );
 };
