@@ -6,7 +6,7 @@ const TempCards = () => {
     <div className="flex flex-col items-center min-h-[270.6px] min-w-[250px] max-w-[250px] rounded-lg border-[1px] bg-[#3B3B3B] border-[#3B3B3B]">
       <div className="min-w-[200px] min-h-[200px] flex justify-center items-center">
         <Image
-          className="invert"
+          className="invert opacity-25"
           src={nftPlaceholder}
           alt="nft-placeholder"
           width={100}

@@ -53,7 +53,7 @@ const Popular = () => {
   };
 
   return (
-    <div>
+    <div className="my-[40px]">
       <h2 className="text-4xl text-white text-[600] my-7">
         Popular NFT Collections
       </h2>
