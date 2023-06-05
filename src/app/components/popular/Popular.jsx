@@ -31,11 +31,6 @@ const Popular = () => {
       }
       return (
         <div>
-          <div>
-            <h2 className="text-4xl text-white text-[600] my-7">
-              Popular NFT Collections
-            </h2>
-          </div>
           <div className="grid grid-cols-4 gap-10">
             {shuffledNFTData
               .filter(
@@ -51,23 +46,17 @@ const Popular = () => {
                   />
                 );
               })}
-            <h1>Hello World</h1>
           </div>
         </div>
       );
     }
   };
-  // DEBUGGING: What is in state
-  // function handleClick() {
-  //   console.log(topNftEth.topNftEthData);
-  //   setShow(!show);
-  // }
 
   return (
     <div>
-      {/* <button onClick={handleClick} className="m-5">
-        What is in Store?
-      </button> */}
+      <h2 className="text-4xl text-white text-[600] my-7">
+        Popular NFT Collections
+      </h2>
       {loading ? <PopularTemp /> : renderNftCard()}
     </div>
   );
