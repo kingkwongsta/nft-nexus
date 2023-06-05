@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className="bg-[#1D2C59] flex flex-col items-center justify-center">
       <Test />
       {/* <PopularTemp /> */}
       <Popular />
