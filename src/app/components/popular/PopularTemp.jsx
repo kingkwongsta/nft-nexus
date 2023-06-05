@@ -2,8 +2,8 @@
 
 const TempCards = () => {
   return (
-    <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
-      <div className="min-w-[200px] min-h-[200px]"></div>
+    <div className="flex flex-col items-center min-h-[260px] max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
+      <div className="min-w-[200px] min-h-[200px] bg-slate-50"></div>
       <h2 className="text-lg font-medium mb-2"></h2>
     </div>
   );
