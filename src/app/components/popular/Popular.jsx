@@ -31,7 +31,12 @@ const Popular = () => {
       }
       return (
         <div>
-          <div className="grid grid-cols-3 gap-10">
+          <div>
+            <h2 className="text-4xl text-white text-[600] my-7">
+              Popular NFT Collections
+            </h2>
+          </div>
+          <div className="grid grid-cols-4 gap-10">
             {shuffledNFTData
               .filter(
                 (item) => item.contract.metadata.cached_thumbnail_url !== null
