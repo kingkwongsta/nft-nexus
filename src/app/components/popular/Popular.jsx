@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PopularCard from "./PopularCard";
 import PopularTemp from "./PopularTemp";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 //main component to export
 const Popular = () => {
