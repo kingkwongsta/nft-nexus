@@ -3,17 +3,8 @@
 const TempCards = () => {
   return (
     <div className="flex flex-col items-center max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
-      <div className="min-w-[200px] min-h-[200px]">
-        {/* <Image
-          className="object-cover h-[200px] mb-4 mt-2 rounded-md"
-          src={collection.metadata.cached_thumbnail_url}
-          width={200}
-          height={200}
-          alt={collection.name}
-        /> */}
-        HELLO
-      </div>
-      <h2 className="text-lg font-medium mb-2">NAME</h2>
+      <div className="min-w-[200px] min-h-[200px]"></div>
+      <h2 className="text-lg font-medium mb-2"></h2>
     </div>
   );
 };
