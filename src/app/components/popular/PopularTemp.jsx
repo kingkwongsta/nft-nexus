@@ -1,9 +1,18 @@
-"use client";
+import Image from "next/image";
+import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 
 const TempCards = () => {
   return (
     <div className="flex flex-col items-center min-h-[270.6px] min-w-[250px] max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
-      <div className="min-w-[200px] min-h-[200px] bg-slate-50"></div>
+      <div className="min-w-[200px] min-h-[200px] flex justify-center items-center">
+        <Image
+          className="invert"
+          src={nftPlaceholder}
+          alt="nft-placeholder"
+          width={100}
+          height={100}
+        />
+      </div>
       <h2 className="text-lg font-medium mb-2"></h2>
     </div>
   );
