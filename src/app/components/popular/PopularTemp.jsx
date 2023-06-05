@@ -3,7 +3,7 @@ import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 
 const TempCards = () => {
   return (
-    <div className="flex flex-col items-center min-h-[270.6px] min-w-[250px] max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1">
+    <div className="flex flex-col items-center min-h-[270.6px] min-w-[250px] max-w-[250px] rounded-lg border-[1px] drop-shadow-lg px-3 py-1 bg-[#3B3B3B]">
       <div className="min-w-[200px] min-h-[200px] flex justify-center items-center">
         <Image
           className="invert"
