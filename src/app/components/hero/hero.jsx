@@ -5,6 +5,22 @@ import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 
 export default function Hero() {
+  const [collectionIndex, setCollectionIndex] = useState(0);
+  const data = [111, 222, 333, 444, 555];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Increment textIndex every second
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setCollectionIndex(randomIndex);
+    }, 5000);
+
+    return () => {
+      // Cleanup: clear the interval when the component unmounts
+      clearInterval(interval);
+    };
+  }, []); // Empty dependency array to run the effect only once on mount
+
   return (
     <div className="hero lg:flex mt-36 mx-36 mb-20">
       {/* LEFT CONTENT */}
@@ -30,7 +46,9 @@ export default function Hero() {
             />
           </Link>
           <div className="bg-zinc-700 rounded-lg">
-            <h3 className="ml-6 pt-5 text-2xl font-semibold">test test</h3>
+            <h3 className="ml-6 pt-5 text-2xl font-semibold">
+              {data[collectionIndex]}
+            </h3>
             <h4 className="flex ml-6 pt-2 text-lg">hell hello</h4>
           </div>
         </div>
