@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main className="bg-[#2B2B2B] flex flex-col items-center justify-center">
       <Test />
-      <Hero />
+      <Hero nft={topNftEth} />
       {/* <Popular /> */}
     </main>
   );
