@@ -9,10 +9,10 @@ export default function Hero() {
     <div className="hero lg:flex mt-36 mx-36 mb-20">
       {/* LEFT CONTENT */}
       <div className="flex-auto basis-2/3 mr-12">
-        <h1 className="text-6xl font-semibold tracking-wider leading-none mb-10">
+        <h1 className="text-6xl text-[#ffffff] font-semibold tracking-wider leading-none mb-10">
           Discover the Best NFTs on Etherum
         </h1>
-        <h3 className="text-2xl mb-12 font-normal leading-normal">
+        <h3 className="text-2xl text-[#ffffff] mb-12 font-normal leading-normal">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam omnis,
           at modi
         </h3>
