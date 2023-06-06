@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 
-export default function Hero() {
+export default function Hero({ nft }) {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const data = [111, 222, 333, 444, 555];
 
@@ -21,6 +21,10 @@ export default function Hero() {
     };
   }, []); // Empty dependency array to run the effect only once on mount
 
+  function showStore() {
+    console.log(nft);
+  }
+
   return (
     <div className="hero lg:flex mt-36 mx-36 mb-20">
       {/* LEFT CONTENT */}
@@ -32,6 +36,9 @@ export default function Hero() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam omnis,
           at modi
         </h3>
+        <button className="m-5 text-3xl text-[#ffffff]" onClick={showStore}>
+          Show what is in Store
+        </button>
       </div>
       {/* RIGHT CONTENT */}
       <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[400px] sm:max-lg:max-h-[300px] bg-zinc-700">
