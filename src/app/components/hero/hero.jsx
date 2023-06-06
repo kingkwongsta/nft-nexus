@@ -7,7 +7,8 @@ import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 export default function Hero() {
   return (
     <div className="hero lg:flex mt-36 mx-36 mb-20">
-      <div className="hero-left flex-auto basis-1/2 mr-12">
+      {/* LEFT CONTENT */}
+      <div className="flex-auto basis-2/3 mr-12">
         <h1 className="text-6xl font-semibold tracking-wider leading-none mb-10">
           Discover the Best NFTs on Etherum
         </h1>
@@ -16,6 +17,7 @@ export default function Hero() {
           at modi
         </h3>
       </div>
+      {/* RIGHT CONTENT */}
       <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[400px] sm:max-lg:max-h-[300px] bg-zinc-700">
         <div className="hero-img rounded-lg pt-10 px-16 w-[500px] ">
           <Link href={`/collection/`}>
