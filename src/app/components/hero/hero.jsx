@@ -11,28 +11,33 @@ export default function Hero({ nft }) {
   const topNftEth = useSelector((state) => state.topNftEth);
   const data = [111, 222, 333, 444, 555];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Increment textIndex every second
-      const randomIndex = Math.floor(Math.random() * data.length);
-      setCollectionIndex(randomIndex);
-    }, 5000);
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       // Increment textIndex every second
+  //       const randomIndex = Math.floor(
+  //         Math.random() * topNftEth.topNftEthData.length
+  //       );
+  //       setCollectionIndex(randomIndex);
+  //     }, 5000);
 
-    return () => {
-      // Cleanup: clear the interval when the component unmounts
-      clearInterval(interval);
-    };
-  }, []); // Empty dependency array to run the effect only once on mount
+  //     return () => {
+  //       // Cleanup: clear the interval when the component unmounts
+  //       clearInterval(interval);
+  //     };
+  //   }, []); // Empty dependency array to run the effect only once on mount
 
   //When store data is fetched, allow data to render
   useEffect(() => {
     if (topNftEth.status == "succeeded") {
-      setLoading(false);
+      setStoreLoading(false);
     }
   }, [topNftEth.status]);
 
   function showStore() {
-    console.log(topNftEth);
+    console.log(topNftEth.topNftEthData);
+    console.log(topNftEth.topNftEthData[0].contract.name);
+    console.log(storeLoading);
+    console.log(topNftEth.status);
   }
 
   return (
@@ -54,19 +59,36 @@ export default function Hero({ nft }) {
       <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[400px] sm:max-lg:max-h-[300px] bg-zinc-700">
         <div className="hero-img rounded-lg pt-10 px-16 w-[500px] ">
           <Link href={`/collection/`}>
-            <Image
-              src={nftPlaceholder}
-              width={300}
-              height={300}
-              alt="heroImage"
-              className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
-            />
+            {storeLoading ? (
+              <Image
+                src={nftPlaceholder}
+                width={300}
+                height={300}
+                alt="heroImage"
+                className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+              />
+            ) : (
+              <Image
+                src={
+                  topNftEth.topNftEthData[0].contract.metadata
+                    .cached_thumbnail_url
+                }
+                width={300}
+                height={300}
+                alt="heroImage"
+                className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+              />
+            )}
           </Link>
           <div className="bg-zinc-700 rounded-lg">
             <h3 className="ml-6 pt-5 text-2xl font-semibold">
               {data[collectionIndex]}
             </h3>
-            <h4 className="flex ml-6 pt-2 text-lg">hell hello</h4>
+            <h4 className="flex ml-6 pt-2 text-lg">
+              {storeLoading
+                ? "hello"
+                : topNftEth.topNftEthData[0].contract.name}
+            </h4>
           </div>
         </div>
       </div>
