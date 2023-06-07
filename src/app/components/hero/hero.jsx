@@ -9,22 +9,22 @@ export default function Hero({ nft }) {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
   const topNftEth = useSelector((state) => state.topNftEth);
-  const data = [111, 222, 333, 444, 555];
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       // Increment textIndex every second
-  //       const randomIndex = Math.floor(
-  //         Math.random() * topNftEth.topNftEthData.length
-  //       );
-  //       setCollectionIndex(randomIndex);
-  //     }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (topNftEth.status == "succeeded") {
+        const randomIndex = Math.floor(
+          Math.random() * topNftEth.topNftEthData.length
+        );
+        setCollectionIndex(randomIndex);
+      }
+    }, 5000);
 
-  //     return () => {
-  //       // Cleanup: clear the interval when the component unmounts
-  //       clearInterval(interval);
-  //     };
-  //   }, []); // Empty dependency array to run the effect only once on mount
+    return () => {
+      // Cleanup: clear the interval when the component unmounts
+      clearInterval(interval);
+    };
+  }, []); // Empty dependency array to run the effect only once on mount
 
   //When store data is fetched, allow data to render
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function Hero({ nft }) {
             ) : (
               <Image
                 src={
-                  topNftEth.topNftEthData[0].contract.metadata
+                  topNftEth.topNftEthData[collectionIndex].contract.metadata
                     .cached_thumbnail_url
                 }
                 width={300}
@@ -81,13 +81,11 @@ export default function Hero({ nft }) {
             )}
           </Link>
           <div className="bg-zinc-700 rounded-lg">
-            <h3 className="ml-6 pt-5 text-2xl font-semibold">
-              {data[collectionIndex]}
-            </h3>
+            <h3 className="ml-6 pt-5 text-2xl font-semibold">test test</h3>
             <h4 className="flex ml-6 pt-2 text-lg">
               {storeLoading
                 ? "hello"
-                : topNftEth.topNftEthData[0].contract.name}
+                : topNftEth.topNftEthData[collectionIndex].contract.name}
             </h4>
           </div>
         </div>
