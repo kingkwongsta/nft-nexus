@@ -9,6 +9,7 @@ export default function Hero({ nft }) {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
   const topNftEth = useSelector((state) => state.topNftEth);
+  const [collectionData, setCollectionData] = useState();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,19 +25,24 @@ export default function Hero({ nft }) {
       // Cleanup: clear the interval when the component unmounts
       clearInterval(interval);
     };
-  }, []); // Empty dependency array to run the effect only once on mount
+  }, [collectionIndex]); // Empty dependency array to run the effect only once on mount
 
   //When store data is fetched, allow data to render
   useEffect(() => {
     if (topNftEth.status == "succeeded") {
       setStoreLoading(false);
+      setCollectionData(
+        topNftEth.topNftEthData.filter(
+          (item) => item.contract.metadata.cached_thumbnail_url !== null
+        )
+      );
     }
   }, [topNftEth.status]);
 
   function showStore() {
     console.log(topNftEth.topNftEthData);
     console.log(collectionIndex);
-    console.log(storeLoading);
+    console.log(collectionData);
     console.log(topNftEth.status);
   }
 
