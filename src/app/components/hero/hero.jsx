@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
+import { useSelector } from "react-redux";
 
 export default function Hero({ nft }) {
   const [collectionIndex, setCollectionIndex] = useState(0);
+  const [storeLoading, setStoreLoading] = useState(true);
+  const topNftEth = useSelector((state) => state.topNftEth);
   const data = [111, 222, 333, 444, 555];
 
   useEffect(() => {
@@ -21,8 +24,15 @@ export default function Hero({ nft }) {
     };
   }, []); // Empty dependency array to run the effect only once on mount
 
+  //When store data is fetched, allow data to render
+  useEffect(() => {
+    if (topNftEth.status == "succeeded") {
+      setLoading(false);
+    }
+  }, [topNftEth.status]);
+
   function showStore() {
-    console.log(nft);
+    console.log(topNftEth);
   }
 
   return (
