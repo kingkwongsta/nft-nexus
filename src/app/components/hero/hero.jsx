@@ -18,7 +18,7 @@ export default function Hero({ nft }) {
         );
         setCollectionIndex(randomIndex);
       }
-    }, 5000);
+    }, 1000);
 
     return () => {
       // Cleanup: clear the interval when the component unmounts
@@ -35,7 +35,7 @@ export default function Hero({ nft }) {
 
   function showStore() {
     console.log(topNftEth.topNftEthData);
-    console.log(topNftEth.topNftEthData[0].contract.name);
+    console.log(collectionIndex);
     console.log(storeLoading);
     console.log(topNftEth.status);
   }
