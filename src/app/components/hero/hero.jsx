@@ -76,7 +76,7 @@ export default function Hero({ nft }) {
             ) : (
               <Image
                 src={
-                  topNftEth.topNftEthData[collectionIndex].contract.metadata
+                  collectionData[collectionIndex].contract.metadata
                     .cached_thumbnail_url
                 }
                 width={300}
@@ -91,7 +91,7 @@ export default function Hero({ nft }) {
             <h4 className="flex ml-6 pt-2 text-lg">
               {storeLoading
                 ? "hello"
-                : topNftEth.topNftEthData[collectionIndex].contract.name}
+                : collectionData[collectionIndex].contract.name}
             </h4>
           </div>
         </div>
