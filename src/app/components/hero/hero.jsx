@@ -13,19 +13,19 @@ export default function Hero({ nft }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (topNftEth.status == "succeeded") {
-        const randomIndex = Math.floor(
-          Math.random() * topNftEth.topNftEthData.length
-        );
-        setCollectionIndex(randomIndex);
-      }
-    }, 1000);
+      const randomIndex = Math.floor(Math.random() * 20);
+      setCollectionIndex(randomIndex);
+      // if (topNftEth.status === "succeeded") {
+      //   const randomIndex = Math.floor(Math.random() * collectionData.length);
+      //   setCollectionIndex(randomIndex);
+      // }
+    }, 2000);
 
     return () => {
       // Cleanup: clear the interval when the component unmounts
       clearInterval(interval);
     };
-  }, [collectionIndex]); // Empty dependency array to run the effect only once on mount
+  }, []);
 
   //When store data is fetched, allow data to render
   useEffect(() => {
