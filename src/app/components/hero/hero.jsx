@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
+import { Transition, CSSTransitionGroup } from "react-transition-group";
 
 export default function Hero({ nft }) {
   const [collectionIndex, setCollectionIndex] = useState(0);
