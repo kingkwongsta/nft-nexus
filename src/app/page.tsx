@@ -4,6 +4,7 @@ import Popular from "./components/popular/Popular";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchInitialData } from "@/redux/features/top-nft-eth/topNftEthSlice";
 import Test from "./components/Test";
+import Hero from "./components/hero/hero";
 import PopularTemp from "./components/popular/PopularTemp";
 
 export default function Home() {
@@ -15,9 +16,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-[#1D2C59] flex flex-col items-center justify-center">
-      <Test />
-      {/* <PopularTemp /> */}
+    <main className="bg-[#2B2B2B] flex flex-col items-center justify-center">
+      {/* <Test /> */}
+      <Hero />
       <Popular />
     </main>
   );
