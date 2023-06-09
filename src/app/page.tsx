@@ -17,9 +17,9 @@ export default function Home() {
 
   return (
     <main className="bg-[#2B2B2B] flex flex-col items-center justify-center">
-      <Test />
+      {/* <Test /> */}
       <Hero />
-      {/* <Popular /> */}
+      <Popular />
     </main>
   );
 }

@@ -19,7 +19,7 @@ export default function Hero({ nft }) {
       //   const randomIndex = Math.floor(Math.random() * collectionData.length);
       //   setCollectionIndex(randomIndex);
       // }
-    }, 2000);
+    }, 4000);
 
     return () => {
       // Cleanup: clear the interval when the component unmounts
@@ -83,6 +83,11 @@ export default function Hero({ nft }) {
                 height={300}
                 alt="heroImage"
                 className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+                transition={{
+                  duration: 2000,
+                  easing: "ease-in-out",
+                  opacity: 0.5,
+                }}
               />
             )}
           </Link>
