@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { collectionType } from "@/types/types";
 
 export interface TopNftEthState {
-  topNftEthData: object | null;
+  topNftEthData: collectionType[] | null;
   loading: boolean;
   error: string;
   status: "idle" | "loading" | "succeeded" | "failed"; // Add a status field to track the state of the async operation

@@ -4,12 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
-import { RootState, collectionType } from "../../../types/types";
+import { RootState, collectionType, TopNftEth } from "../../../types/types";
+import { TopNftEthState } from "@/redux/features/top-nft-eth/topNftEthSlice";
 
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
-  const topNftEth = useSelector((state: RootState) => state.topNftEth);
+  // const topNftEth: TopNftEthState = useSelector(
+  //   (state: RootState) => state.topNftEth
+  // );
+  const reduxNftData: collectionType[] | null = useSelector(
+    (state: RootState) => state.topNftEth.topNftEthData
+  );
+
+  const status: "idle" | "loading" | "succeeded" | "failed" = useSelector(
+    (state: RootState) => state.topNftEth.status
+  );
 
   const [collectionData, setCollectionData] = useState();
 
@@ -23,26 +33,26 @@ export default function Hero() {
       // Cleanup: clear the interval when the component unmounts
       clearInterval(interval);
     };
-  }, [topNftEth.topNftEthData]);
+  }, [reduxNftData]);
 
   //When store data is fetched, allow data to render
   useEffect(() => {
-    if (topNftEth.status == "succeeded") {
+    if (status == "succeeded") {
       setStoreLoading(false);
       setCollectionData(
-        topNftEth.topNftEthData.filter(
+        reduxNftData.filter(
           (item: collectionType) =>
             item.contract.metadata.cached_thumbnail_url !== null
         )
       );
     }
-  }, [topNftEth.status]);
+  }, [status]);
 
   function showStore() {
-    console.log(topNftEth.topNftEthData);
+    console.log(reduxNftData);
     console.log(collectionIndex);
     console.log(collectionData);
-    console.log(topNftEth.status);
+    console.log(status);
   }
 
   return (
@@ -82,11 +92,6 @@ export default function Hero() {
                 height={300}
                 alt="heroImage"
                 className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
-                transition={{
-                  duration: 2000,
-                  easing: "ease-in-out",
-                  opacity: 0.5,
-                }}
               />
             )}
           </Link>
