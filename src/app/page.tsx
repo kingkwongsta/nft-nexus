@@ -6,9 +6,10 @@ import { fetchInitialData } from "@/redux/features/top-nft-eth/topNftEthSlice";
 import Test from "./components/Test";
 import Hero from "./components/hero/hero";
 import PopularTemp from "./components/popular/PopularTemp";
+import { RootState } from "./../types/types";
 
 export default function Home() {
-  const topNftEth = useSelector((state) => state.topNftEth);
+  const topNftEth = useSelector((state: RootState) => state.topNftEth);
   const dispatch = useDispatch();
 
   useEffect(() => {
