@@ -27,7 +27,7 @@ export default function Hero() {
       // Cleanup: clear the interval when the component unmounts
       clearInterval(interval);
     };
-  }, []);
+  }, [topNftEth.topNftEthData]);
 
   //When store data is fetched, allow data to render
   useEffect(() => {
