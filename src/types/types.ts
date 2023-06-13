@@ -1,3 +1,5 @@
+import { TopNftEthState } from "@/redux/features/top-nft-eth/topNftEthSlice";
+
 export interface collectionType {
   total: number;
   contract: {
@@ -14,10 +16,7 @@ export interface collectionType {
 }
 
 export interface RootState {
-  topNftEth: collectionType[];
-  loading: boolean;
-  status: string;
-  error: string;
+  topNftEth: TopNftEthState;
 }
 
 export interface TopNftEth {

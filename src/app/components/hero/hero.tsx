@@ -16,12 +16,19 @@ export default function Hero() {
   const reduxNftData: collectionType[] | null = useSelector(
     (state: RootState) => state.topNftEth.topNftEthData
   );
-
+  const loading: boolean = useSelector(
+    (state: RootState) => state.topNftEth.loading
+  );
+  const error: string = useSelector(
+    (state: RootState) => state.topNftEth.error
+  );
   const status: "idle" | "loading" | "succeeded" | "failed" = useSelector(
     (state: RootState) => state.topNftEth.status
   );
 
-  const [collectionData, setCollectionData] = useState();
+  const [collectionData, setCollectionData] = useState<
+    collectionType[] | undefined
+  >(undefined);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,16 +44,15 @@ export default function Hero() {
 
   //When store data is fetched, allow data to render
   useEffect(() => {
-    if (status == "succeeded") {
+    if (status === "succeeded" && reduxNftData !== null) {
       setStoreLoading(false);
-      setCollectionData(
-        reduxNftData.filter(
-          (item: collectionType) =>
-            item.contract.metadata.cached_thumbnail_url !== null
-        )
+      const filteredData = reduxNftData.filter(
+        (item: collectionType) =>
+          item.contract.metadata.cached_thumbnail_url !== null
       );
+      setCollectionData(filteredData);
     }
-  }, [status]);
+  }, [status, reduxNftData]);
 
   function showStore() {
     console.log(reduxNftData);
