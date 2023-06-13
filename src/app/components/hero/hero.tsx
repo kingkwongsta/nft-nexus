@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../types/types";
+import { RootState, collectionType } from "../../../types/types";
 
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
@@ -31,7 +31,8 @@ export default function Hero() {
       setStoreLoading(false);
       setCollectionData(
         topNftEth.topNftEthData.filter(
-          (item) => item.contract.metadata.cached_thumbnail_url !== null
+          (item: collectionType) =>
+            item.contract.metadata.cached_thumbnail_url !== null
         )
       );
     }
