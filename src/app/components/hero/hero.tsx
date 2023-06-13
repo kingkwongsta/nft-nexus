@@ -17,10 +17,6 @@ export default function Hero() {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * 20);
       setCollectionIndex(randomIndex);
-      // if (topNftEth.status === "succeeded") {
-      //   const randomIndex = Math.floor(Math.random() * collectionData.length);
-      //   setCollectionIndex(randomIndex);
-      // }
     }, 4000);
 
     return () => {
