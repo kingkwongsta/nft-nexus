@@ -6,7 +6,7 @@ import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
 import { Transition, CSSTransitionGroup } from "react-transition-group";
 
-export default function Hero({ nft }) {
+export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
   const topNftEth = useSelector((state) => state.topNftEth);
