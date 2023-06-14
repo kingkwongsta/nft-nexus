@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { collectionType } from "@/shared/types";
 
 export interface TopNftEthState {
-  topNftEthData: object | null;
+  topNftEthData: collectionType[] | null;
   loading: boolean;
   error: string;
   status: "idle" | "loading" | "succeeded" | "failed"; // Add a status field to track the state of the async operation
@@ -18,7 +19,7 @@ export const fetchInitialData = createAsyncThunk(
 );
 
 const initialState: TopNftEthState = {
-  topNftEthData: null,
+  topNftEthData: [],
   loading: false,
   status: "idle", // Set initial status to "idle"
   error: "",
@@ -42,7 +43,7 @@ export const topNftEthSlice = createSlice({
       })
       .addCase(fetchInitialData.rejected, (state, action) => {
         state.status = "failed"; // Update status to "failed" if the fetch fails
-        state.topNftEthData = {};
+        state.topNftEthData = [];
         state.error = action.error.message ?? "Unknown error occurred";
       });
   },
