@@ -91,8 +91,8 @@ export default function Hero() {
             ) : (
               <Image
                 src={
-                  collectionData[collectionIndex].contract.metadata
-                    .cached_thumbnail_url
+                  collectionData?.[collectionIndex]?.contract.metadata
+                    .cached_thumbnail_url ?? "no img"
                 }
                 width={300}
                 height={300}
@@ -102,12 +102,11 @@ export default function Hero() {
             )}
           </Link>
           <div className="bg-zinc-700 rounded-lg">
-            <h3 className="ml-6 pt-5 text-2xl font-semibold">test test</h3>
-            <h4 className="flex ml-6 pt-2 text-lg">
-              {storeLoading
-                ? "hello"
-                : collectionData[collectionIndex].contract.name}
-            </h4>
+            <h3 className=" mt-3 text-2xl font-semibold text-center text-[#ffffff]">
+              {storeLoading || !collectionData
+                ? "loading"
+                : collectionData[collectionIndex]?.contract.name}
+            </h3>
           </div>
         </div>
       </div>
