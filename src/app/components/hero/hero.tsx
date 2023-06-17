@@ -5,7 +5,6 @@ import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
 import { RootState, collectionType, TopNftEth } from "../../../shared/types";
-import { TopNftEthState } from "@/redux/features/top-nft-eth/topNftEthSlice";
 
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
