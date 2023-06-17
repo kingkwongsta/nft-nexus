@@ -5,7 +5,6 @@ import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
 import { RootState, collectionType, TopNftEth } from "../../../shared/types";
-import { TopNftEthState } from "@/redux/features/top-nft-eth/topNftEthSlice";
 
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
@@ -77,8 +76,10 @@ export default function Hero() {
         </button>
       </div>
       {/* RIGHT CONTENT */}
-      <div className="hero-right sm:max-lg:invisible sm:max-lg:h-0 sm:mt-10 lg:mt-0 flex-auto basis-1/2 justify-center h-[400px] sm:max-lg:max-h-[300px] bg-zinc-700">
-        <div className="hero-img rounded-lg pt-10 px-16 w-[500px] ">
+      <div className="hero-right flex-auto basis-1/2 justify-center">
+        <div className="max-w-[400px] bg-zinc-700 rounded-xl lg:min-h-[400px]">
+          {" "}
+          <div className="hero-img rounded-lg pt-10 px-16 w-[500px] "></div>
           <Link href={`/collection/`}>
             {storeLoading ? (
               <Image
