@@ -78,7 +78,7 @@ export default function Hero() {
       </div>
       {/* RIGHT CONTENT */}
       <div className="hero-right flex-auto basis-1/2 justify-center">
-        <div className="max-w-[400px] bg-zinc-700 rounded-xl">
+        <div className="max-w-[400px] bg-zinc-700 rounded-xl lg:min-h-[400px]">
           {" "}
           <div className="hero-img rounded-lg pt-10 px-16 w-[500px] "></div>
           <Link href={`/collection/`}>
