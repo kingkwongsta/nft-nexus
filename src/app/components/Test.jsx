@@ -1,28 +1,16 @@
 "use client";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-function Test() {
-  const [loading, setLoading] = useState(true);
-  const topNftEth = useSelector((state) => state.topNftEth);
-  useEffect(() => {
-    if (topNftEth.status == "succeeded") {
-      setLoading(false);
-    }
-  }, [topNftEth.status]);
-
-  const getStore = () => {
-    console.log(topNftEth);
-  };
-
-  return (
-    <div>
-      <button className="m-5 px-4 py-2 rounded" onClick={getStore}>
-        Get what is in store
-      </button>
-      {loading ? <p>LOADING...</p> : <p>got store data</p>}
-    </div>
-  );
+export default function Test() {
+  return <h2>HELLO</h2>;
 }
 
-export default Test;
+export const MyComponent = () => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+  />
+);
