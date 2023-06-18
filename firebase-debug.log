@@ -1,28 +1,22 @@
-[debug] [2023-06-14T04:17:57.649Z] ----------------------------------------------------------------------
-[debug] [2023-06-14T04:17:57.651Z] Command:       /usr/local/bin/firebase /Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
-[debug] [2023-06-14T04:17:57.652Z] CLI Version:   12.3.1
-[debug] [2023-06-14T04:17:57.652Z] Platform:      darwin
-[debug] [2023-06-14T04:17:57.652Z] Node Version:  v16.16.0
-[debug] [2023-06-14T04:17:57.658Z] Time:          Tue Jun 13 2023 21:17:57 GMT-0700 (Pacific Daylight Time)
-[debug] [2023-06-14T04:17:57.658Z] ----------------------------------------------------------------------
+[debug] [2023-06-17T06:17:41.649Z] ----------------------------------------------------------------------
+[debug] [2023-06-17T06:17:41.651Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-17T06:17:41.651Z] CLI Version:   12.4.0
+[debug] [2023-06-17T06:17:41.651Z] Platform:      win32
+[debug] [2023-06-17T06:17:41.651Z] Node Version:  v19.6.1
+[debug] [2023-06-17T06:17:41.651Z] Time:          Fri Jun 16 2023 23:17:41 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-06-17T06:17:41.651Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-06-14T04:17:57.766Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-06-14T04:17:57.768Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
-[debug] [2023-06-14T04:17:57.769Z] [iam] checking project nft-nexus-b7c42 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-06-14T04:17:57.772Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions [none]
-[debug] [2023-06-14T04:17:57.773Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions x-goog-quota-user=projects/nft-nexus-b7c42
-[debug] [2023-06-14T04:17:57.774Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-06-14T04:17:57.964Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions 200
-[debug] [2023-06-14T04:17:57.966Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-06-14T04:17:57.968Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 [none]
-[debug] [2023-06-14T04:17:58.362Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 200
-[debug] [2023-06-14T04:17:58.364Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 {"projectId":"nft-nexus-b7c42","projectNumber":"69535583634","displayName":"NFT Nexus","name":"projects/nft-nexus-b7c42","resources":{"hostingSite":"nft-nexus-b7c42"},"state":"ACTIVE","etag":"1_503eaa1a-c2d0-4f2d-918d-8643118f3eff"}
-[debug] [2023-06-14T04:18:01.934Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/nft-nexus-b7c42/sites pageToken=&pageSize=10
-[debug] [2023-06-14T04:18:02.445Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/nft-nexus-b7c42/sites 200
-[debug] [2023-06-14T04:18:02.447Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/nft-nexus-b7c42/sites {"sites":[{"name":"projects/nft-nexus-b7c42/sites/nft-nexus-b7c42","defaultUrl":"https://nft-nexus-b7c42.web.app","appId":"1:69535583634:web:d3dc22ca064e8bea17454b","type":"DEFAULT_SITE"}]}
-[debug] [2023-06-14T04:18:02.448Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:69535583634:web:d3dc22ca064e8bea17454b/config [none]
-[debug] [2023-06-14T04:18:03.252Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:69535583634:web:d3dc22ca064e8bea17454b/config 200
-[debug] [2023-06-14T04:18:03.254Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:69535583634:web:d3dc22ca064e8bea17454b/config {"projectId":"nft-nexus-b7c42","appId":"1:69535583634:web:d3dc22ca064e8bea17454b","storageBucket":"nft-nexus-b7c42.appspot.com","apiKey":"AIzaSyAfh2Iodhc84Jliy9Hkz5fS47Ozkuj-xX4","authDomain":"nft-nexus-b7c42.firebaseapp.com","messagingSenderId":"69535583634","measurementId":"G-5PF0F94YZP"}
+[debug] [2023-06-17T06:17:41.693Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-17T06:17:41.693Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
+[debug] [2023-06-17T06:17:41.693Z] [iam] checking project nft-nexus-b7c42 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-17T06:17:41.695Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions [none]
+[debug] [2023-06-17T06:17:41.695Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions x-goog-quota-user=projects/nft-nexus-b7c42
+[debug] [2023-06-17T06:17:41.695Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-17T06:17:41.944Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions 200
+[debug] [2023-06-17T06:17:41.944Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-17T06:17:41.946Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 [none]
+[debug] [2023-06-17T06:17:42.226Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 200
+[debug] [2023-06-17T06:17:42.227Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 {"projectId":"nft-nexus-b7c42","projectNumber":"69535583634","displayName":"NFT Nexus","name":"projects/nft-nexus-b7c42","resources":{"hostingSite":"nft-nexus-b7c42"},"state":"ACTIVE","etag":"1_cdb2c53f-43f2-4432-8bb0-c90ebab3a528"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -33,46 +27,25 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2023-06-14T04:18:50.725Z] Error: Export encountered errors on following paths:
-	/about
-	/collection/[slug]
-    at /Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/export/index.js:622:19
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at async Span.traceAsyncFn (/Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/trace/trace.js:103:20)
-    at async /Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/build/index.js:1489:21
-    at async Span.traceAsyncFn (/Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/trace/trace.js:103:20)
-    at async /Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/build/index.js:1345:17
-    at async Span.traceAsyncFn (/Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/trace/trace.js:103:20)
-    at async build (/Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/build/index.js:145:29)
-    at async build (/Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:57:5)
-    at async prepareFrameworks (/Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:211:33)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2023-06-14T04:21:01.622Z] ----------------------------------------------------------------------
-[debug] [2023-06-14T04:21:01.624Z] Command:       /usr/local/bin/firebase /Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
-[debug] [2023-06-14T04:21:01.625Z] CLI Version:   12.3.1
-[debug] [2023-06-14T04:21:01.625Z] Platform:      darwin
-[debug] [2023-06-14T04:21:01.625Z] Node Version:  v16.16.0
-[debug] [2023-06-14T04:21:01.627Z] Time:          Tue Jun 13 2023 21:21:01 GMT-0700 (Pacific Daylight Time)
-[debug] [2023-06-14T04:21:01.627Z] ----------------------------------------------------------------------
+[debug] [2023-06-17T06:31:23.922Z] ----------------------------------------------------------------------
+[debug] [2023-06-17T06:31:23.924Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-17T06:31:23.924Z] CLI Version:   12.4.0
+[debug] [2023-06-17T06:31:23.924Z] Platform:      win32
+[debug] [2023-06-17T06:31:23.924Z] Node Version:  v19.6.1
+[debug] [2023-06-17T06:31:23.925Z] Time:          Fri Jun 16 2023 23:31:23 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-06-17T06:31:23.925Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-06-14T04:21:01.730Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-06-14T04:21:01.731Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
-[debug] [2023-06-14T04:21:01.731Z] [iam] checking project nft-nexus-b7c42 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-06-14T04:21:01.733Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions [none]
-[debug] [2023-06-14T04:21:01.734Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions x-goog-quota-user=projects/nft-nexus-b7c42
-[debug] [2023-06-14T04:21:01.735Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-06-14T04:21:02.068Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions 200
-[debug] [2023-06-14T04:21:02.071Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-06-14T04:21:02.073Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 [none]
-[debug] [2023-06-14T04:21:02.446Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 200
-[debug] [2023-06-14T04:21:02.446Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 {"projectId":"nft-nexus-b7c42","projectNumber":"69535583634","displayName":"NFT Nexus","name":"projects/nft-nexus-b7c42","resources":{"hostingSite":"nft-nexus-b7c42"},"state":"ACTIVE","etag":"1_503eaa1a-c2d0-4f2d-918d-8643118f3eff"}
-[debug] [2023-06-14T04:21:05.963Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/nft-nexus-b7c42/sites pageToken=&pageSize=10
-[debug] [2023-06-14T04:21:06.434Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/nft-nexus-b7c42/sites 200
-[debug] [2023-06-14T04:21:06.436Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/nft-nexus-b7c42/sites {"sites":[{"name":"projects/nft-nexus-b7c42/sites/nft-nexus-b7c42","defaultUrl":"https://nft-nexus-b7c42.web.app","appId":"1:69535583634:web:d3dc22ca064e8bea17454b","type":"DEFAULT_SITE"}]}
-[debug] [2023-06-14T04:21:06.437Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:69535583634:web:d3dc22ca064e8bea17454b/config [none]
-[debug] [2023-06-14T04:21:06.965Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:69535583634:web:d3dc22ca064e8bea17454b/config 200
-[debug] [2023-06-14T04:21:06.966Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:69535583634:web:d3dc22ca064e8bea17454b/config {"projectId":"nft-nexus-b7c42","appId":"1:69535583634:web:d3dc22ca064e8bea17454b","storageBucket":"nft-nexus-b7c42.appspot.com","apiKey":"AIzaSyAfh2Iodhc84Jliy9Hkz5fS47Ozkuj-xX4","authDomain":"nft-nexus-b7c42.firebaseapp.com","messagingSenderId":"69535583634","measurementId":"G-5PF0F94YZP"}
+[debug] [2023-06-17T06:31:23.965Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-17T06:31:23.966Z] > authorizing via signed-in user (bryant.j.kwong@gmail.com)
+[debug] [2023-06-17T06:31:23.966Z] [iam] checking project nft-nexus-b7c42 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-17T06:31:23.967Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions [none]
+[debug] [2023-06-17T06:31:23.967Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions x-goog-quota-user=projects/nft-nexus-b7c42
+[debug] [2023-06-17T06:31:23.967Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-17T06:31:24.242Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions 200
+[debug] [2023-06-17T06:31:24.242Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nft-nexus-b7c42:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-17T06:31:24.243Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 [none]
+[debug] [2023-06-17T06:31:24.485Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 200
+[debug] [2023-06-17T06:31:24.485Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nft-nexus-b7c42 {"projectId":"nft-nexus-b7c42","projectNumber":"69535583634","displayName":"NFT Nexus","name":"projects/nft-nexus-b7c42","resources":{"hostingSite":"nft-nexus-b7c42"},"state":"ACTIVE","etag":"1_cdb2c53f-43f2-4432-8bb0-c90ebab3a528"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -83,16 +56,3 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2023-06-14T04:21:29.137Z] Error: Build optimization failed: found page without a React Component as default export in 
-pages/collection/[slug]
-
-See https://nextjs.org/docs/messages/page-without-valid-component for more info.
-
-    at /Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/build/index.js:1273:29
-    at async Span.traceAsyncFn (/Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/trace/trace.js:103:20)
-    at async build (/Users/bkwong/Downloads/code/nft-nexus/node_modules/next/dist/build/index.js:145:29)
-    at async build (/Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:57:5)
-    at async prepareFrameworks (/Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:211:33)
-    at async deploy (/Users/bkwong/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:55:13)
-[error] 
-[error] Error: An unexpected error has occurred.
