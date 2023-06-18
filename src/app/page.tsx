@@ -17,12 +17,7 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <main className="box">
-      <motion.div
-        className="box"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 2 }}
-      />
+    <main>
       {/* <Hero />
       <Popular /> */}
     </main>
