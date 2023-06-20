@@ -18,7 +18,7 @@ export default function Page({ params }) {
       return <Gallery key={index} nft={nft} />;
     });
   }
-  function getState() {
+  function getVariables() {
     console.log(topNftEth);
     console.log("clean path: ", cleanPath);
     console.log(nftIndex);
@@ -26,11 +26,6 @@ export default function Page({ params }) {
 
   return (
     <div>
-      <p>hello worldz</p>
-      <p>{cleanPath}</p>
-      <button onClick={getState} className="m-5">
-        click me
-      </button>
       <div className="grid grid-cols-4 gap-4">
         {topNftEth ? renderCollectionGallery() : <p>loading</p>}
       </div>
