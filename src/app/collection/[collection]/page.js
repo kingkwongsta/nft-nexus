@@ -31,15 +31,26 @@ export default function Page({ params }) {
       <button onClick={getState} className="m-5">
         click me
       </button>
-      <div>{topNftEth ? renderCollectionGallery() : <p>loading</p>}</div>
+      <div className="grid grid-cols-4 gap-4">
+        {topNftEth ? renderCollectionGallery() : <p>loading</p>}
+      </div>
     </div>
   );
 }
 
 function Gallery({ nft }) {
   return (
-    <div>
-      <h3>{nft.metadata.name}</h3>
+    <div className="card">
+      {nft.cached_file_url && (
+        <Image
+          className=""
+          src={nft.cached_file_url}
+          width="250"
+          height="250"
+          alt="bayc"
+        />
+      )}
+      <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
     </div>
   );
 }
