@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <main>
-      {/* <Hero />
-      <Popular /> */}
+      <Hero />
+      <Popular />
     </main>
   );
 }
