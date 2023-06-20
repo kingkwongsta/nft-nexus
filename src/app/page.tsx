@@ -6,7 +6,6 @@ import { fetchInitialData } from "@/redux/features/top-nft-eth/topNftEthSlice";
 import Hero from "./components/hero/hero";
 import { RootState } from "../shared/types";
 import { useAppDispatch } from "@/shared/hooks";
-import { motion } from "framer-motion";
 
 export default function Home() {
   const topNftEth = useSelector((state: RootState) => state.topNftEth);
@@ -17,9 +16,9 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <main>
-      {/* <Hero />
-      <Popular /> */}
+    <main className="bg-[#2B2B2B] flex flex-col items-center justify-center">
+      <Hero />
+      <Popular />
     </main>
   );
 }

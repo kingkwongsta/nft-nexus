@@ -9,7 +9,6 @@ const PopularCard = ({ collection, nfts }) => {
       <Link
         href={{
           pathname: "{`/collection/${collection.name}`}",
-          query: nfts,
         }}
         as={`/collection/${collection.name}`}
       >

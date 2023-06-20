@@ -74,6 +74,13 @@ export default function Hero() {
         <button className="m-5 text-3xl text-[#ffffff]" onClick={showStore}>
           Show what is in Store
         </button>
+        <Link
+          href={{
+            pathname: "/test",
+          }}
+        >
+          <button className="m-5 text-3xl text-[#ffffff]">Test Page</button>
+        </Link>
       </div>
       {/* RIGHT CONTENT */}
       <div className="hero-right flex-auto basis-1/2 justify-center">

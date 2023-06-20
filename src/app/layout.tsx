@@ -18,9 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        {/* <div className="m-5 w-max text-center">
-          <h2>HEADER HERE</h2>
-        </div> */}
         <body className={inter.className}>{children}</body>
       </Providers>
     </html>
