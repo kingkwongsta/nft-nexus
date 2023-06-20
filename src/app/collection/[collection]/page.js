@@ -31,6 +31,7 @@ export default function Page({ params }) {
       <button onClick={getState} className="m-5">
         click me
       </button>
+      <div>{topNftEth ? renderCollectionGallery() : <p>loading</p>}</div>
     </div>
   );
 }
