@@ -14,7 +14,7 @@ export default function Page({ params }) {
   );
 
   function renderCollectionGallery() {
-    return collectionData.nfts.map((nft, index) => {
+    return topNftEth.topNftEthData[nftIndex].nfts.map((nft, index) => {
       return <Gallery key={index} nft={nft} />;
     });
   }
@@ -22,7 +22,6 @@ export default function Page({ params }) {
     console.log(topNftEth);
     console.log("clean path: ", cleanPath);
     console.log(nftIndex);
-    console.log(topNftEth.topNftEthData[2].contract.name);
   }
 
   return (
@@ -36,19 +35,10 @@ export default function Page({ params }) {
   );
 }
 
-function Gallery() {
+function Gallery({ nft }) {
   return (
-    <div className="card">
-      {nft.cached_file_url && (
-        <Image
-          className=""
-          src={nft.cached_file_url}
-          width="250"
-          height="250"
-          alt="bayc"
-        />
-      )}
-      <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
+    <div>
+      <h3>{nft.metadata.name}</h3>
     </div>
   );
 }
