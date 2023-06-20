@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function Page({ params }) {
   const path = usePathname();
+  const cleanPath = path.replace("/collection/", "").replace("%", " ");
   // const { asPath } = router;
   // // const routeName = asPath.split("/").filter(Boolean).pop();
   const topNftEth = useSelector((state) => state.topNftEth);
@@ -16,14 +17,16 @@ export default function Page({ params }) {
   }
   function getState() {
     console.log(topNftEth);
-    console.log(path);
-    // console.log(topNftEth.topNftEthData.findIndex(obj=> obj.contract.name == ""))
+    console.log("clean path: ", cleanPath);
+    console.log(
+      topNftEth.topNftEthData.findIndex((obj) => obj.contract.name == cleanPath)
+    );
   }
 
   return (
     <div>
       <p>hello worldz</p>
-      {/* <p>{routeName}</p> */}
+      <p>{path.replace("/collection/", "").replace("%", " ")}</p>
       <button onClick={getState} className="m-5">
         click me
       </button>
