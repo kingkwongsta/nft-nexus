@@ -11,9 +11,9 @@ export default function Page() {
   const status = useSelector((state) => state.topNftEth.status);
 
   useEffect(() => {
-    if (status === "succeeded" && reduxNftData !== null) {
+    if (status === "succeeded" && storeData !== null) {
       setStoreLoading(false);
-      const filteredData = reduxNftData.filter(
+      const filteredData = storeData.filter(
         (item) => item.contract.metadata.cached_thumbnail_url !== null
       );
       setCollectionData(filteredData);
@@ -27,7 +27,7 @@ export default function Page() {
   return (
     <div>
       <h2>COOL STUsssFF</h2>
-      <button className="m-5 text-3xl text-[#ffffff]" onClick={showStore}>
+      <button className="m-5 text-3xl text-[#000000]" onClick={showStore}>
         Show what is in Store
       </button>
     </div>
