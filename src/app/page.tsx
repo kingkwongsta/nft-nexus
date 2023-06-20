@@ -17,7 +17,7 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <main>
+    <main className="bg-[#2B2B2B] flex flex-col items-center justify-center">
       <Hero />
       <Popular />
     </main>
