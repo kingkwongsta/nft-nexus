@@ -1,8 +1,12 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 
-export default function Page() {
+export default function Page({ params }) {
+  const path = usePathname();
+  // const { asPath } = router;
+  // // const routeName = asPath.split("/").filter(Boolean).pop();
   const topNftEth = useSelector((state) => state.topNftEth);
 
   function renderCollectionGallery() {
@@ -12,11 +16,14 @@ export default function Page() {
   }
   function getState() {
     console.log(topNftEth);
+    console.log(path);
+    // console.log(topNftEth.topNftEthData.findIndex(obj=> obj.contract.name == ""))
   }
 
   return (
     <div>
       <p>hello worldz</p>
+      {/* <p>{routeName}</p> */}
       <button onClick={getState} className="m-5">
         click me
       </button>
