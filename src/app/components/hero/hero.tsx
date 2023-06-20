@@ -77,9 +77,6 @@ export default function Hero() {
         <Link
           href={{
             pathname: "/test",
-            query: {
-              search: "search",
-            },
           }}
         >
           <button className="m-5 text-3xl text-[#ffffff]">Test Page</button>
