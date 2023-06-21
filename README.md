@@ -1,7 +1,7 @@
 ## NFT NEXUS
 
 ## Goal:  Browse the top NFTs on ETH
-### [Live Website]([https://nft-nexus.vercel.app/](https://nft-nexus-git-main-kingkwongsta.vercel.app/)
+### [Live Website](https://nft-nexus-git-main-kingkwongsta.vercel.app/)
 #### Major work in progress
 ---
 #### Latest Milestone
