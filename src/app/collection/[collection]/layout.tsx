@@ -1,7 +1,7 @@
 "use client";
-import "./../globals.css";
+import "./../../globals.css";
 import { Inter } from "next/font/google";
-import { Providers } from "./../../redux/provider";
+import { Providers } from "../../../redux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 

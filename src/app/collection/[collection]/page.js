@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
-import Image from "next/image";
+import Gallery from "./../../components/gallery/gallery";
 
 export default function Page({ params }) {
   const path = usePathname();
@@ -29,23 +29,6 @@ export default function Page({ params }) {
       <div className="grid grid-cols-4 gap-4">
         {topNftEth ? renderCollectionGallery() : <p>loading</p>}
       </div>
-    </div>
-  );
-}
-
-function Gallery({ nft }) {
-  return (
-    <div className="card">
-      {nft.cached_file_url && (
-        <Image
-          className=""
-          src={nft.cached_file_url}
-          width="250"
-          height="250"
-          alt="bayc"
-        />
-      )}
-      <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
     </div>
   );
 }
