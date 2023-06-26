@@ -14,10 +14,18 @@ export default function Page({ params }) {
   );
 
   function renderCollectionGallery() {
-    return topNftEth.topNftEthData[nftIndex].nfts.map((nft, index) => {
-      return <Gallery key={index} nft={nft} />;
-    });
+    return topNftEth.topNftEthData[nftIndex].nfts
+      .filter((item) => item.cached_file_url !== null)
+      .map((nft, index) => {
+        return <Gallery key={index} nft={nft} />;
+      });
   }
+  // function renderCollectionGallery() {
+  //   return topNftEth.topNftEthData[nftIndex].nfts.map((nft, index) => {
+  //     return <Gallery key={index} nft={nft} />;
+  //   });
+  // }
+
   function getVariables() {
     console.log(topNftEth);
     console.log("clean path: ", cleanPath);
