@@ -9,9 +9,7 @@ import { RootState, collectionType, salesType } from "../../../shared/types";
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
-  const [salesData, setSalesData] = useState<salesType[] | undefined>(
-    undefined
-  );
+  const [salesData, setSalesData] = useState<salesType[] | null>(null);
 
   const reduxNftData: collectionType[] | null = useSelector(
     (state: RootState) => state.topNftEth.topNftEthData
