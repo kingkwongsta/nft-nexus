@@ -11,15 +11,15 @@ export default function Page({ params }) {
   // // const routeName = asPath.split("/").filter(Boolean).pop();
   // const topNftEth = useSelector((state) => state.topNftEth);
   const reduxNftData: collectionType[] | null = useSelector(
-    (state: RootState) => state.topNftEth
+    (state: RootState) => state.topNftEth.topNftEthData
   );
 
-  const nftIndex = reduxNftData.topNftEthData.findIndex(
-    (obj) => obj.contract.name == cleanPath
-  );
+  const nftIndex = reduxNftData
+    ? reduxNftData.findIndex((obj) => obj.contract.name === cleanPath)
+    : [];
 
   function renderCollectionGallery() {
-    return reduxNftData.reduxNftData[nftIndex].nfts
+    return reduxNftData[nftIndex].nfts
       .filter((item) => item.cached_file_url !== null)
       .map((nft, index) => {
         return <Gallery key={index} nft={nft} />;
