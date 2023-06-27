@@ -9,9 +9,8 @@ import { RootState, collectionType, TopNftEth } from "../../../shared/types";
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
-  // const topNftEth: TopNftEthState = useSelector(
-  //   (state: RootState) => state.topNftEth
-  // );
+  const [salesData, setSalesData] = useState();
+
   const reduxNftData: collectionType[] | null = useSelector(
     (state: RootState) => state.topNftEth.topNftEthData
   );
@@ -51,13 +50,19 @@ export default function Hero() {
       );
       setCollectionData(filteredData);
     }
+    fetchData();
   }, [status, reduxNftData]);
+
+  async function fetchData(): Promise<void> {
+    const res = await fetch("/api/web3/eth-top-sales");
+    const data = await res.json();
+    setSalesData(data);
+  }
 
   function showStore() {
     console.log(reduxNftData);
-    console.log(collectionIndex);
     console.log(collectionData);
-    console.log(status);
+    console.log(salesData);
   }
 
   return (
