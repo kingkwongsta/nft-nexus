@@ -27,6 +27,9 @@ export interface salesType {
     floor_price: number;
     market_cap: number;
     num_owners: number;
+    total_volume: number;
+    one_day_average_price: number;
+    total_supply: number;
   };
 }
 

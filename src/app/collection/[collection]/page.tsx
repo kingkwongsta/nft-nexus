@@ -60,7 +60,7 @@ export default function Page() {
   }
 
   return (
-    <div>
+    <div className="bg-[#2B2B2B] flex flex-col items-center justify-center">
       {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
       <div className="grid grid-cols-4 gap-4">
         {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
