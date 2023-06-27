@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
-import Gallery from "./../../components/gallery/gallery";
+import Gallery from "./../../components/collection/gallery";
 
 export default function Page({ params }) {
   const path = usePathname();
