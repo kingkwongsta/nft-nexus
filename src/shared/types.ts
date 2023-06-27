@@ -15,6 +15,18 @@ export interface collectionType {
   };
 }
 
+export interface salesType {
+  data_pulled: string;
+  name: string;
+  response: string;
+  statistics: {
+    average_price: number;
+    floor_price: number;
+    market_cap: number;
+    num_owners: number;
+  };
+}
+
 export interface RootState {
   topNftEth: TopNftEthState;
 }
