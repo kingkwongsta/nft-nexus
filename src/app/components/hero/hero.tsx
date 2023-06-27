@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import nftPlaceholder from "./../../../../public/nft-placeholder.png";
 import { useSelector } from "react-redux";
-import { RootState, collectionType, TopNftEth } from "../../../shared/types";
+import { RootState, collectionType, salesType } from "../../../shared/types";
 
 export default function Hero() {
   const [collectionIndex, setCollectionIndex] = useState(0);
   const [storeLoading, setStoreLoading] = useState(true);
-  const [salesData, setSalesData] = useState();
+  const [salesData, setSalesData] = useState<salesType[] | undefined>(
+    undefined
+  );
 
   const reduxNftData: collectionType[] | null = useSelector(
     (state: RootState) => state.topNftEth.topNftEthData
@@ -22,6 +24,9 @@ export default function Hero() {
   );
   const status: "idle" | "loading" | "succeeded" | "failed" = useSelector(
     (state: RootState) => state.topNftEth.status
+  );
+  const reduxSalesData: salesType[] | null = useSelector(
+    (state: RootState) => state.ethSales.salesData
   );
 
   const [collectionData, setCollectionData] = useState<
@@ -49,15 +54,11 @@ export default function Hero() {
           item.contract.metadata.cached_thumbnail_url !== null
       );
       setCollectionData(filteredData);
+      if (reduxSalesData !== null) {
+        setSalesData(reduxSalesData);
+      }
     }
-    fetchData();
-  }, [status, reduxNftData]);
-
-  async function fetchData(): Promise<void> {
-    const res = await fetch("/api/web3/eth-top-sales");
-    const data = await res.json();
-    setSalesData(data);
-  }
+  }, [status, reduxNftData, reduxSalesData]);
 
   function showStore() {
     console.log(reduxNftData);

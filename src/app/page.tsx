@@ -2,7 +2,8 @@
 import { useEffect } from "react";
 import Popular from "./components/popular/Popular";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchInitialData } from "@/redux/features/top-nft-eth/topNftEthSlice";
+import { fetchInitialData as initialEthNFT } from "@/redux/features/top-nft-eth/topNftEthSlice";
+import { fetchInitialData as initialEthSales } from "@/redux/features/eth-top-sales/ethTopSalesSlice";
 import Hero from "./components/hero/hero";
 import { RootState } from "../shared/types";
 import { useAppDispatch } from "@/shared/hooks";
@@ -12,7 +13,8 @@ export default function Home() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchInitialData());
+    dispatch(initialEthNFT());
+    dispatch(initialEthSales());
   }, [dispatch]);
 
   return (
