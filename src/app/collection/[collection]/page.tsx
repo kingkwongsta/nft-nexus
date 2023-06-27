@@ -4,12 +4,9 @@ import { useSelector } from "react-redux";
 import Gallery from "../../components/collection/gallery";
 import { RootState, collectionType, salesType } from "../../../shared/types";
 
-export default function Page({ params }) {
+export default function Page() {
   const path = usePathname();
   const cleanPath = path.replace("/collection/", "").replace("%20", " ");
-  // const { asPath } = router;
-  // // const routeName = asPath.split("/").filter(Boolean).pop();
-  // const topNftEth = useSelector((state) => state.topNftEth);
   const reduxNftData: collectionType[] | null = useSelector(
     (state: RootState) => state.topNftEth.topNftEthData
   );
@@ -19,12 +16,23 @@ export default function Page({ params }) {
     : [];
 
   function renderCollectionGallery() {
-    return reduxNftData[nftIndex].nfts
-      .filter((item) => item.cached_file_url !== null)
-      .map((nft, index) => {
-        return <Gallery key={index} nft={nft} />;
-      });
+    if (reduxNftData && reduxNftData.length > 0) {
+      const nftIndex = reduxNftData.findIndex(
+        (obj) => obj.contract.name === cleanPath
+      );
+      if (nftIndex !== -1) {
+        return reduxNftData[nftIndex].nfts
+          .filter(
+            (item: { cached_file_url: string }) => item.cached_file_url !== null
+          )
+          .map((nft, index: number) => {
+            return <Gallery key={index} nft={nft} />;
+          });
+      }
+    }
+    return null; // fallback value
   }
+
   // function renderCollectionGallery() {
   //   return topNftEth.topNftEthData[nftIndex].nfts.map((nft, index) => {
   //     return <Gallery key={index} nft={nft} />;

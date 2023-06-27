@@ -2,6 +2,9 @@ import { TopNftEthState } from "@/redux/features/top-nft-eth/topNftEthSlice";
 
 export interface collectionType {
   total: number;
+  nfts: Array<{
+    cached_file_url: string;
+  }>;
   contract: {
     name: string;
     symbol: string;
@@ -28,6 +31,7 @@ export interface salesType {
 }
 
 export interface RootState {
+  ethSales: any;
   topNftEth: TopNftEthState;
 }
 
