@@ -31,16 +31,18 @@ export default function Page() {
 
   function getNFTProps() {
     //filter data for individual NFT of Collection
-    let nftCollection: any[] = [];
+    let nftCollection: Record<string, any> = {};
     let salesCollection: Record<string, any> = {};
     if (reduxNftData && reduxNftData.length > 0) {
       nftIndex = reduxNftData.findIndex(
         (obj) => obj.contract.name === cleanPath
       );
+      // if (nftIndex !== -1) {
+      //   nftCollection = reduxNftData[nftIndex].nfts.filter(
+      //     (item: { cached_file_url: string }) => item.cached_file_url !== null
+      //   );
       if (nftIndex !== -1) {
-        nftCollection = reduxNftData[nftIndex].nfts.filter(
-          (item: { cached_file_url: string }) => item.cached_file_url !== null
-        );
+        nftCollection = reduxNftData[nftIndex];
       }
     }
     //filter data for collection's sales data
@@ -58,14 +60,18 @@ export default function Page() {
 
   function renderCollectionGallery() {
     const { nftItem } = getNFTProps();
-    return nftItem.map((nft: Record<string, any>, index: number) => {
-      return <Gallery key={index} nft={nft} />;
-    });
+    return nftItem.nfts
+      .filter(
+        (item: { cached_file_url: string }) => item.cached_file_url !== null
+      )
+      .map((nft: Record<string, any>, index: number) => {
+        return <Gallery key={index} nft={nft} />;
+      });
   }
 
   function renderCollectionInfo() {
-    const { salesItem } = getNFTProps();
-    return <Info salesInfo={salesItem} />;
+    const { nftItem, salesItem } = getNFTProps();
+    return <Info salesInfo={salesItem} nftInfo={nftItem} />;
   }
 
   function getVariables() {
