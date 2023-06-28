@@ -51,7 +51,7 @@ export default function Page() {
       }
     }
     return {
-      nftItem: nftCollection[nftIndex],
+      nftItem: nftCollection,
       salesItem: salesCollection[salesIndex],
     };
   }
