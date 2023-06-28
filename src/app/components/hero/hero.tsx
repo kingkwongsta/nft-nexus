@@ -75,44 +75,43 @@ export default function Hero() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam omnis,
           at modi
         </h3>
-        <button className="m-5 text-3xl text-[#ffffff]" onClick={showStore}>
+        {/* <button className="m-5 text-3xl text-[#ffffff]" onClick={showStore}>
           Show what is in Store
-        </button>
-        <Link
-          href={{
-            pathname: "/test",
-          }}
-        >
-          <button className="m-5 text-3xl text-[#ffffff]">Test Page</button>
-        </Link>
+        </button> */}
       </div>
       {/* RIGHT CONTENT */}
       <div className="hero-right flex-auto basis-1/2 justify-center">
         <div className="max-w-[400px] bg-zinc-700 rounded-xl lg:min-h-[400px]">
-          {" "}
           <div className="hero-img rounded-lg pt-10 px-16 w-[500px] "></div>
-          <Link href={`/collection/`}>
-            {storeLoading ? (
-              <Image
-                src={nftPlaceholder}
-                width={300}
-                height={300}
-                alt="heroImage"
-                className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
-              />
-            ) : (
-              <Image
-                src={
-                  collectionData?.[collectionIndex]?.contract.metadata
-                    .cached_thumbnail_url ?? "no img"
-                }
-                width={300}
-                height={300}
-                alt="heroImage"
-                className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
-              />
-            )}
-          </Link>
+          {collectionData && collectionData[collectionIndex]?.contract && (
+            <Link
+              href={{
+                pathname: `/collection/${collectionData[collectionIndex]?.contract.name}`,
+              }}
+              as={`/collection/${collectionData[collectionIndex]?.contract.name}`}
+            >
+              {storeLoading ? (
+                <Image
+                  src={nftPlaceholder}
+                  width={300}
+                  height={300}
+                  alt="heroImage"
+                  className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+                />
+              ) : (
+                <Image
+                  src={
+                    collectionData[collectionIndex]?.contract.metadata
+                      ?.cached_thumbnail_url ?? "no img"
+                  }
+                  width={300}
+                  height={300}
+                  alt="heroImage"
+                  className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
+                />
+              )}
+            </Link>
+          )}
           <div className="bg-zinc-700 rounded-lg">
             <h3 className=" mt-3 text-2xl font-semibold text-center text-[#ffffff]">
               {storeLoading || !collectionData
