@@ -86,7 +86,7 @@ export default function Page() {
       {/* <button className="m-10 font-3xl" onClick={getVariables}>
         Get Me The Data
       </button> */}
-      <div className="flex flex-col items-center justify-center">
+      <div className="">
         {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
       </div>
       {/* <div className="grid grid-flow-row auto-rows-max justify-evenly justify-items-center"> */}
