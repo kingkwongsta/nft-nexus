@@ -21,10 +21,10 @@ export default function Page() {
   // const salesIndex = reduxSalesData
   //   ? reduxSalesData.findIndex((obj) => obj.name === cleanPath)
   //   : [];
-
+  let nftIndex: number = 0;
   function getNFTProps() {
     let nftCollection: any[] = [];
-    let nftIndex: number = 0;
+
     let salesIndex: number = 0;
     if (reduxNftData && reduxNftData.length > 0) {
       nftIndex = reduxNftData.findIndex(
