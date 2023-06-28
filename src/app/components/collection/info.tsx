@@ -3,9 +3,10 @@ import { salesType } from "../../../shared/types";
 
 interface InfoProps {
   salesInfo: salesType;
+  nftInfo: Record<string, any>;
 }
 
-export default function Info({ salesInfo }: InfoProps) {
+export default function Info({ salesInfo, nftInfo }: InfoProps) {
   const stat = [
     {
       metric: "Floor:",
@@ -46,6 +47,7 @@ export default function Info({ salesInfo }: InfoProps) {
   }
   return (
     <div className="container flex flex-wrap mb-16">
+      <p>{nftInfo.response}</p>
       <div className="section-img flex grow justify-center">
         {/* <Image
           className="min-w-[250px] min-h-[250px]"

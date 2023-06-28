@@ -60,13 +60,16 @@ export default function Page() {
 
   function renderCollectionGallery() {
     const { nftItem } = getNFTProps();
-    return nftItem.nfts
-      .filter(
-        (item: { cached_file_url: string }) => item.cached_file_url !== null
-      )
-      .map((nft: Record<string, any>, index: number) => {
-        return <Gallery key={index} nft={nft} />;
-      });
+    return (
+      nftItem.nfts
+        //remove any items without a valid image
+        .filter(
+          (item: { cached_file_url: string }) => item.cached_file_url !== null
+        )
+        .map((nft: Record<string, any>, index: number) => {
+          return <Gallery key={index} nft={nft} />;
+        })
+    );
   }
 
   function renderCollectionInfo() {
