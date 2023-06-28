@@ -38,8 +38,8 @@ export default function Info({ salesInfo }: InfoProps) {
     return stat.map((stat, index) => {
       return (
         <div className="flex justify-between bg-zinc-700 p-2" key={index}>
-          <div>{stat.metric}</div>
-          <div>{stat.amount}</div>
+          <div className="text-[#FFFFFF]">{stat.metric}</div>
+          <div className="text-[#FFFFFF]">{stat.amount}</div>
         </div>
       );
     });

@@ -12,15 +12,33 @@ export default function Page() {
     (state: RootState) => state.topNftEth.topNftEthData
   );
 
-  const nftIndex = reduxNftData
-    ? reduxNftData.findIndex((obj) => obj.contract.name === cleanPath)
-    : [];
+  // const nftIndex = reduxNftData
+  //   ? reduxNftData.findIndex((obj) => obj.contract.name === cleanPath)
+  //   : [];
   const reduxSalesData: salesType[] | null = useSelector(
     (state: RootState) => state.ethSales.salesData
   );
-  const salesIndex = reduxSalesData
-    ? reduxSalesData.findIndex((obj) => obj.name === cleanPath)
-    : [];
+  // const salesIndex = reduxSalesData
+  //   ? reduxSalesData.findIndex((obj) => obj.name === cleanPath)
+  //   : [];
+
+  function getNFTProps() {
+    let nftCollection: any[] = [];
+    let nftIndex: number = 0;
+    let salesIndex: number = 0;
+    if (reduxNftData && reduxNftData.length > 0) {
+      nftIndex = reduxNftData.findIndex(
+        (obj) => obj.contract.name === cleanPath
+      );
+      if (nftIndex !== -1) {
+        nftCollection = reduxNftData[nftIndex].nfts.filter(
+          (item: { cached_file_url: string }) => item.cached_file_url !== null
+        );
+      }
+    }
+
+    return nftCollection[nftIndex];
+  }
 
   function renderCollectionGallery() {
     if (reduxNftData && reduxNftData.length > 0) {
@@ -54,14 +72,17 @@ export default function Page() {
   }
 
   function getVariables() {
-    console.log(reduxNftData);
-    console.log("clean path: ", cleanPath);
-    console.log(nftIndex);
+    console.log(getNFTProps());
   }
 
   return (
-    <div className="bg-[#2B2B2B] flex flex-col items-center justify-center">
-      {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
+    <div className="bg-[#2B2B2B]">
+      <button className="m-10 font-3xl" onClick={getVariables}>
+        Get Me The Data
+      </button>
+      <div className="flex flex-col items-center justify-center">
+        {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
+      </div>
       <div className="grid grid-cols-4 gap-4">
         {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
       </div>
