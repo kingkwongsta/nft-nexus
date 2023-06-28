@@ -3,7 +3,12 @@ import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import Gallery from "../../components/collection/gallery";
 import Info from "@/app/components/collection/info";
-import { RootState, collectionType, salesType } from "../../../shared/types";
+import {
+  RootState,
+  collectionType,
+  salesType,
+  salesData,
+} from "../../../shared/types";
 
 export default function Page() {
   const path = usePathname();
@@ -22,10 +27,12 @@ export default function Page() {
   //   ? reduxSalesData.findIndex((obj) => obj.name === cleanPath)
   //   : [];
   let nftIndex: number = 0;
-  function getNFTProps() {
-    let nftCollection: any[] = [];
+  let salesIndex: number = 0;
 
-    let salesIndex: number = 0;
+  function getNFTProps() {
+    //filter data for individual NFT of Collection
+    let nftCollection: any[] = [];
+    let salesCollection: Record<string, any> = {};
     if (reduxNftData && reduxNftData.length > 0) {
       nftIndex = reduxNftData.findIndex(
         (obj) => obj.contract.name === cleanPath
@@ -36,26 +43,39 @@ export default function Page() {
         );
       }
     }
-
-    return nftCollection[nftIndex];
+    //filter data for collection's sales data
+    if (reduxSalesData && reduxSalesData.length > 0) {
+      salesIndex = reduxSalesData.findIndex((obj) => obj.name === cleanPath);
+      if (salesIndex !== -1) {
+        salesCollection = reduxSalesData;
+      }
+    }
+    return {
+      nftItem: nftCollection[nftIndex],
+      salesItem: salesCollection[salesIndex],
+    };
   }
 
   function renderCollectionGallery() {
-    if (reduxNftData && reduxNftData.length > 0) {
-      const nftIndex = reduxNftData.findIndex(
-        (obj) => obj.contract.name === cleanPath
-      );
-      if (nftIndex !== -1) {
-        return reduxNftData[nftIndex].nfts
-          .filter(
-            (item: { cached_file_url: string }) => item.cached_file_url !== null
-          )
-          .map((nft, index: number) => {
-            return <Gallery key={index} nft={nft} />;
-          });
-      }
-    }
-    return null; // fallback value
+    const { nftItem, salesItem } = getNFTProps();
+    return nftItem.map((nft: Record<string, any>, index: number) => {
+      return <Gallery key={index} nft={nft} />;
+    });
+    // if (reduxNftData && reduxNftData.length > 0) {
+    //   const nftIndex = reduxNftData.findIndex(
+    //     (obj) => obj.contract.name === cleanPath
+    //   );
+    //   if (nftIndex !== -1) {
+    //     return reduxNftData[nftIndex].nfts
+    //       .filter(
+    //         (item: { cached_file_url: string }) => item.cached_file_url !== null
+    //       )
+    //       .map((nft, index: number) => {
+    //         return <Gallery key={index} nft={nft} />;
+    //       });
+    //   }
+    // }
+    // return null; // fallback value
   }
 
   function renderCollectionInfo() {
@@ -64,7 +84,6 @@ export default function Page() {
         (obj) => obj.name === cleanPath
       );
       if (salesIndex !== -1) {
-        console.log(reduxSalesData[salesIndex]);
         return <Info salesInfo={reduxSalesData[salesIndex] as salesType} />;
       }
     }
