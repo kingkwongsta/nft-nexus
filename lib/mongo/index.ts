@@ -6,13 +6,13 @@ const options = {};
 if (!URI) throw new Error("Add Mongo URI to .env file");
 
 let client = new MongoClient(URI, options);
-let clientPromise;
+let clientPromise: Promise<MongoClient>;
 
-if (process.env.NODE_ENV != "production") {
-  if (!global._mongoClientPrmoise) {
-    global._mongoClientPrmoise = client.connect();
+if (process.env.NODE_ENV !== "production") {
+  if (!(global as any)._mongoClientPromise) {
+    (global as any)._mongoClientPromise = client.connect();
   }
-  clientPromise = global._mongoClientPrmoise;
+  clientPromise = (global as any)._mongoClientPromise;
 } else {
   clientPromise = client.connect();
 }
