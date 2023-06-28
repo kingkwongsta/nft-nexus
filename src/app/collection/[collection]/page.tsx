@@ -89,7 +89,6 @@ export default function Page() {
       <div className="">
         {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
       </div>
-      {/* <div className="grid grid-flow-row auto-rows-max justify-evenly justify-items-center"> */}
       <div className="flex flex-wrap justify-evenly justify-items-center">
         {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
       </div>

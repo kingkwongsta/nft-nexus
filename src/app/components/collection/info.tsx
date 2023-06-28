@@ -46,25 +46,27 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     });
   }
   return (
-    <div className="container flex flex-wrap mb-16">
-      <div className="section-img flex grow justify-center">
-        <Image
-          className="min-w-[250px] min-h-[250px]"
-          src={nftInfo.contract.metadata.cached_thumbnail_url}
-          width={200}
-          height={200}
-          alt="placeholder"
-        />
-      </div>
-      <div className="section-stats grow justify-center">
-        <div className="text-[#ffffff] text-4xl font-semibold mb-8 text-center mt-5 min-[940]:mt-0">
-          {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
+    <div className="">
+      <div className="flex flex-row mb-10">
+        <div className="basis-1/4 ml-20 mr-[80px]">
+          <Image
+            className="min-w-[250px] min-h-[250px]"
+            src={nftInfo.contract.metadata.cached_thumbnail_url}
+            width={200}
+            height={200}
+            alt="placeholder"
+          />
         </div>
-        <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
-          {renderStats()}
+        <div className="basis-3/4 mr-20">
+          <div className="text-[#ffffff] text-4xl font-semibold mb-8 text-center mt-5 min-[940]:mt-0">
+            {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
+          </div>
+          <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
+            {renderStats()}
+          </div>
         </div>
       </div>
-      <div className="section-info flex items-center justify-center grow mt-10 px-2 min-[940]:px-8">
+      <div className="items-center justify-center mb-10 px-2 min-[940]:px-8">
         <div>
           <div className="px-12 text-center text-xl text-[#ffffff]">
             {nftInfo.contract.metadata.description}
