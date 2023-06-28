@@ -57,37 +57,15 @@ export default function Page() {
   }
 
   function renderCollectionGallery() {
-    const { nftItem, salesItem } = getNFTProps();
+    const { nftItem } = getNFTProps();
     return nftItem.map((nft: Record<string, any>, index: number) => {
       return <Gallery key={index} nft={nft} />;
     });
-    // if (reduxNftData && reduxNftData.length > 0) {
-    //   const nftIndex = reduxNftData.findIndex(
-    //     (obj) => obj.contract.name === cleanPath
-    //   );
-    //   if (nftIndex !== -1) {
-    //     return reduxNftData[nftIndex].nfts
-    //       .filter(
-    //         (item: { cached_file_url: string }) => item.cached_file_url !== null
-    //       )
-    //       .map((nft, index: number) => {
-    //         return <Gallery key={index} nft={nft} />;
-    //       });
-    //   }
-    // }
-    // return null; // fallback value
   }
 
   function renderCollectionInfo() {
-    if (reduxSalesData && reduxSalesData.length > 0) {
-      const salesIndex = reduxSalesData.findIndex(
-        (obj) => obj.name === cleanPath
-      );
-      if (salesIndex !== -1) {
-        return <Info salesInfo={reduxSalesData[salesIndex] as salesType} />;
-      }
-    }
-    return null; // fallback value
+    const { salesItem } = getNFTProps();
+    return <Info salesInfo={salesItem} />;
   }
 
   function getVariables() {
