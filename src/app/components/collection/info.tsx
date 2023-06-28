@@ -47,18 +47,17 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
   }
   return (
     <div className="container flex flex-wrap mb-16">
-      <p>{nftInfo.response}</p>
       <div className="section-img flex grow justify-center">
-        {/* <Image
+        <Image
           className="min-w-[250px] min-h-[250px]"
-          src={nftData.contract.metadata.cached_thumbnail_url}
+          src={nftInfo.contract.metadata.cached_thumbnail_url}
           width={200}
           height={200}
           alt="placeholder"
-        /> */}
+        />
       </div>
       <div className="section-stats grow justify-center">
-        <div className="stat-title text-4xl font-semibold mb-8 text-center mt-5 min-[940]:mt-0">
+        <div className="text-[#ffffff] text-4xl font-semibold mb-8 text-center mt-5 min-[940]:mt-0">
           {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
         </div>
         <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
@@ -67,8 +66,8 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
       </div>
       <div className="section-info flex items-center justify-center grow mt-10 px-2 min-[940]:px-8">
         <div>
-          <div className="px-12 text-center text-xl">
-            {/* {nftData.contract.metadata.description} */}
+          <div className="px-12 text-center text-xl text-[#ffffff]">
+            {nftInfo.contract.metadata.description}
           </div>
         </div>
       </div>
