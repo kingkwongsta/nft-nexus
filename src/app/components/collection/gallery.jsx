@@ -4,7 +4,7 @@ export default function Gallery({ nft }) {
     <div className="card mx-5 my-2">
       {nft.cached_file_url && (
         <Image
-          className=""
+          className="rounded-md"
           src={nft.cached_file_url}
           width="250"
           height="250"

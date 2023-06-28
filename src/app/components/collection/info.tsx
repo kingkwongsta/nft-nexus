@@ -38,35 +38,38 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
   function renderStats() {
     return stat.map((stat, index) => {
       return (
-        <div className="flex justify-between bg-zinc-700 p-2" key={index}>
-          <div className="text-[#FFFFFF]">{stat.metric}</div>
-          <div className="text-[#FFFFFF]">{stat.amount}</div>
+        <div
+          className="flex justify-between bg-zinc-800 p-4 m-1 rounded-md"
+          key={index}
+        >
+          <div className="text-[#FFFFFF] text-lg">{stat.metric}</div>
+          <div className="text-[#FFFFFF] text-lg">{stat.amount}</div>
         </div>
       );
     });
   }
   return (
     <div className="">
-      <div className="flex flex-row mb-10">
+      <div className="text-[#ffffff] text-4xl font-semibold mb-9 text-center min-[940]:mt-0">
+        {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
+      </div>
+      <div className="flex flex-row mb-10 mx-10 p-5 bg-zinc-700">
         <div className="basis-1/4 ml-20 mr-[80px]">
           <Image
-            className="min-w-[250px] min-h-[250px]"
+            className="min-w-[250px] min-h-[250px] rounded-md"
             src={nftInfo.contract.metadata.cached_thumbnail_url}
             width={200}
             height={200}
             alt="placeholder"
           />
         </div>
-        <div className="basis-3/4 mr-20">
-          <div className="text-[#ffffff] text-4xl font-semibold mb-8 text-center mt-5 min-[940]:mt-0">
-            {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
-          </div>
+        <div className="basis-3/4 mr-20 items-center">
           <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
             {renderStats()}
           </div>
         </div>
       </div>
-      <div className="items-center justify-center mb-10 px-2 min-[940]:px-8">
+      <div className="mb-10 bg-zinc-700 px-2 min-[940]:px-8">
         <div>
           <div className="px-12 text-center text-xl text-[#ffffff]">
             {nftInfo.contract.metadata.description}
