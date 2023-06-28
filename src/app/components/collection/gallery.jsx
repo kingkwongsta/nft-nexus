@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Gallery({ nft }) {
   return (
-    <div className="card">
+    <div className="card mx-5 my-2">
       {nft.cached_file_url && (
         <Image
           className=""
@@ -11,7 +11,7 @@ export default function Gallery({ nft }) {
           alt="bayc"
         />
       )}
-      <p className="text-lg my-2 mb-8">#{nft.token_id}</p>
+      <p className="text-lg text-[#ffffff] my-2 mb-8">#{nft.token_id}</p>
     </div>
   );
 }

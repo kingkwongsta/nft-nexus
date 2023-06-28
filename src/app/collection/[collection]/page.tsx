@@ -83,13 +83,14 @@ export default function Page() {
 
   return (
     <div className="bg-[#2B2B2B]">
-      <button className="m-10 font-3xl" onClick={getVariables}>
+      {/* <button className="m-10 font-3xl" onClick={getVariables}>
         Get Me The Data
-      </button>
+      </button> */}
       <div className="flex flex-col items-center justify-center">
         {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
       </div>
-      <div className="grid grid-cols-4 gap-4">
+      {/* <div className="grid grid-flow-row auto-rows-max justify-evenly justify-items-center"> */}
+      <div className="flex flex-wrap justify-evenly justify-items-center">
         {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
       </div>
     </div>
