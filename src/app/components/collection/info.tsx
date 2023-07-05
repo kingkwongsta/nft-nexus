@@ -49,11 +49,11 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     });
   }
   return (
-    <div className="max-w-[1200px]">
+    <div className="max-w-[1200px] mt-[50px]">
       <div className="text-[#ffffff] text-4xl font-semibold mb-9 text-center min-[940]:mt-0">
         {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
       </div>
-      <div className="flex flex-row mb-10 mx-10 p-5 bg-zinc-700">
+      <div className="flex flex-row p-5 bg-zinc-700">
         <div className="basis-1/4 ml-20 mr-[80px]">
           <Image
             className="min-w-[250px] min-h-[250px] rounded-md"
@@ -69,7 +69,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
           </div>
         </div>
       </div>
-      <div className="mb-10 bg-zinc-700 px-2 min-[940]:px-8">
+      <div className="mb-10 bg-zinc-700 py-4 px-10 min-[940]:px-8">
         <div>
           <div className="px-12 text-center text-xl text-[#ffffff]">
             {nftInfo.contract.metadata.description}
