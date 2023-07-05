@@ -49,33 +49,60 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     });
   }
   return (
-    <div className="max-w-[1200px] mt-[50px]">
-      <div className="text-[#ffffff] text-4xl font-semibold mb-9 text-center min-[940]:mt-0">
+    <div className="max-w-[1200px] mt-[50px] flex flex-wrap">
+      <div className="flex-basis-full text-[#ffffff] text-4xl font-semibold text-center">
         {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
       </div>
-      <div className="flex flex-row p-5 bg-zinc-700">
-        <div className="basis-1/4 ml-20 mr-[80px]">
-          <Image
-            className="min-w-[250px] min-h-[250px] rounded-md"
-            src={nftInfo.contract.metadata.cached_thumbnail_url}
-            width={200}
-            height={200}
-            alt="placeholder"
-          />
-        </div>
-        <div className="basis-3/4 mr-20 items-center">
-          <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
-            {renderStats()}
-          </div>
+
+      <Image
+        className="flex-basis-2/4 rounded-md"
+        src={nftInfo.contract.metadata.cached_thumbnail_url}
+        width={200}
+        height={200}
+        alt="placeholder"
+      />
+
+      <div className="flex-basis-2/4 items-center">
+        <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
+          {renderStats()}
         </div>
       </div>
-      <div className="mb-10 bg-zinc-700 py-4 px-10 min-[940]:px-8">
+
+      {/* <div className="basis-full">
         <div>
           <div className="px-12 text-center text-xl text-[#ffffff]">
             {nftInfo.contract.metadata.description}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
+    // <div className="max-w-[1200px] mt-[50px]">
+    //   <div className="text-[#ffffff] text-4xl font-semibold mb-9 text-center min-[940]:mt-0">
+    //     {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
+    //   </div>
+    //   <div className="flex flex-row p-5 bg-zinc-700">
+    //     <div className="basis-1/4 ml-10 mr-[80px]">
+    //       <Image
+    //         className="min-w-[250px] min-h-[250px] rounded-md"
+    //         src={nftInfo.contract.metadata.cached_thumbnail_url}
+    //         width={200}
+    //         height={200}
+    //         alt="placeholder"
+    //       />
+    //     </div>
+    //     <div className="basis-3/4 mr-10 items-center">
+    //       <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
+    //         {renderStats()}
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className="mb-10 bg-zinc-700 py-4 px-5 min-[940]:px-8">
+    //     <div>
+    //       <div className="px-12 text-center text-xl text-[#ffffff]">
+    //         {nftInfo.contract.metadata.description}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
