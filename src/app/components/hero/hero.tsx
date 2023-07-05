@@ -69,11 +69,14 @@ export default function Hero() {
       {/* LEFT CONTENT */}
       <div className="flex-auto basis-2/3 mr-12">
         <h1 className="text-6xl text-[#ffffff] font-semibold tracking-wider leading-none mb-10">
-          Discover the Best NFTs on Etherum
+          Discover the captivating world of NFTs
         </h1>
         <h3 className="text-2xl text-[#ffffff] mb-12 font-normal leading-normal">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam omnis,
-          at modi
+          Explore an array of top NFTs handpicked for your viewing pleasure,
+          immersing yourself in the realms of art, collectibles, and digital
+          wonders, all at your fingertips. Uncover unique creations, support
+          artists, and embark on a journey where creativity meets the
+          blockchain.
         </h3>
         {/* <button className="m-5 text-3xl text-[#ffffff]" onClick={showStore}>
           Show what is in Store
