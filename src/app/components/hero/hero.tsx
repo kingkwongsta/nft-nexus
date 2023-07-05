@@ -65,11 +65,11 @@ export default function Hero() {
   }
 
   return (
-    <div className="hero lg:flex mt-36 mx-36 mb-20">
+    <div className="flex flex-row my-6 max-w-[1120px]">
       {/* LEFT CONTENT */}
-      <div className="flex-auto basis-2/3 mr-12">
+      <div className="basis-3/4 mr-12">
         <h1 className="text-6xl text-[#ffffff] font-semibold tracking-wider leading-none mb-10">
-          Discover the captivating world of NFTs
+          Discover the world of NFTs
         </h1>
         <h3 className="text-2xl text-[#ffffff] mb-12 font-normal leading-normal">
           Explore an array of top NFTs handpicked for your viewing pleasure,
@@ -83,7 +83,7 @@ export default function Hero() {
         </button> */}
       </div>
       {/* RIGHT CONTENT */}
-      <div className="hero-right flex-auto basis-1/2 justify-center">
+      <div className="basis-1/4 justify-center">
         <div className="max-w-[400px] bg-zinc-700 rounded-xl lg:min-h-[400px]">
           <div className="hero-img rounded-lg pt-10 px-16 w-[500px] "></div>
           {collectionData && collectionData[collectionIndex]?.contract && (
