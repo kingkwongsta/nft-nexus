@@ -54,7 +54,7 @@ const Popular = () => {
 
   return (
     <div className="my-6">
-      <h2 className="text-4xl text-white text-[600] my-7">
+      <h2 className="text-4xl text-white font-[500] my-7">
         Popular NFT Collections
       </h2>
       {loading ? <PopularTemp /> : renderNftCard()}

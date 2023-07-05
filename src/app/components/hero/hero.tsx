@@ -65,13 +65,13 @@ export default function Hero() {
   }
 
   return (
-    <div className="flex flex-row my-6 max-w-[1120px]">
+    <div className="flex flex-row mt-[50px] max-w-[1120px]">
       {/* LEFT CONTENT */}
       <div className="basis-3/4 mr-12">
-        <h1 className="text-5xl text-[#ffffff] leading-tight font-semibold tracking-wider leading-none mb-10">
+        <h1 className="text-5xl text-[#ffffff] font-[600] leading-tight font-semibold tracking-wider leading-none mb-10">
           Discover the world of NFTs
         </h1>
-        <h3 className="text-xl text-[#ffffff] leading-8 smb-12 font-normal leading-normal">
+        <h3 className="text-xl text-[#ffffff] font-[400] leading-8 smb-12 font-normal leading-normal">
           Explore an array of top NFTs handpicked for your viewing pleasure,
           immersing yourself in the realms of art, collectibles, and digital
           wonders, all at your fingertips. Uncover unique creations, support
