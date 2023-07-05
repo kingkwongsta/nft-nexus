@@ -68,10 +68,10 @@ export default function Hero() {
     <div className="flex flex-row my-6 max-w-[1120px]">
       {/* LEFT CONTENT */}
       <div className="basis-3/4 mr-12">
-        <h1 className="text-6xl text-[#ffffff] font-semibold tracking-wider leading-none mb-10">
+        <h1 className="text-5xl text-[#ffffff] leading-tight font-semibold tracking-wider leading-none mb-10">
           Discover the world of NFTs
         </h1>
-        <h3 className="text-2xl text-[#ffffff] mb-12 font-normal leading-normal">
+        <h3 className="text-xl text-[#ffffff] leading-8 smb-12 font-normal leading-normal">
           Explore an array of top NFTs handpicked for your viewing pleasure,
           immersing yourself in the realms of art, collectibles, and digital
           wonders, all at your fingertips. Uncover unique creations, support
