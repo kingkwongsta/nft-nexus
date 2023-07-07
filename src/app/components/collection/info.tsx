@@ -49,20 +49,20 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     });
   }
   return (
-    <div className="max-w-[1200px] mt-[50px] flex flex-wrap">
-      <div className="flex-basis-full text-[#ffffff] text-4xl font-semibold text-center">
+    <div className="max-w-[1200px] mt-[50px] grid grid-cols-3 gap-3">
+      <div className="col-span-3 text-[#ffffff] text-4xl font-semibold text-center">
         {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
       </div>
 
       <Image
-        className="flex-basis-2/4 rounded-md"
+        className="col-span-1 rounded-md mt-4"
         src={nftInfo.contract.metadata.cached_thumbnail_url}
         width={200}
         height={200}
         alt="placeholder"
       />
 
-      <div className="flex-basis-2/4 items-center">
+      <div className="col-span-2 items-center">
         <div className="stat-details-section grid grid-cols-2 gap-x-14 gap-y-4 text-xlg uppercase">
           {renderStats()}
         </div>

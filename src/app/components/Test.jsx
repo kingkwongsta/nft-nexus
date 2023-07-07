@@ -4,13 +4,11 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Test() {
-  return <h2>HELLO</h2>;
+  return (
+    <div class="flex flex-row">
+      <div class="basis-4/5">01</div>
+      <div class="basis-1/5">02</div>
+      {/* <div class="basis-1/2">03</div> */}
+    </div>
+  );
 }
-
-export const MyComponent = () => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
-  />
-);

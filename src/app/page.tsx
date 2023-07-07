@@ -7,6 +7,7 @@ import { fetchInitialData as initialEthSales } from "@/redux/features/eth-top-sa
 import Hero from "./components/hero/hero";
 import { RootState } from "../shared/types";
 import { useAppDispatch } from "@/shared/hooks";
+import Test from "./components/Test";
 
 export default function Home() {
   const topNftEth = useSelector((state: RootState) => state.topNftEth);
@@ -18,9 +19,11 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <main className="bg-[#2B2B2B] flex flex-col items-center justify-center">
+    <main className="bg-[#2B2B2B]">
+      {/* <main className="bg-[#2B2B2B] flex flex-col items-center justify-center"> */}
       <Hero />
       <Popular />
+      {/* <Test /> */}
     </main>
   );
 }
