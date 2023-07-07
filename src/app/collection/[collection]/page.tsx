@@ -3,12 +3,7 @@ import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import Gallery from "../../components/collection/gallery";
 import Info from "@/app/components/collection/info";
-import {
-  RootState,
-  collectionType,
-  salesType,
-  salesData,
-} from "../../../shared/types";
+import { RootState, collectionType, salesType } from "../../../shared/types";
 
 export default function Page() {
   const path = usePathname();
@@ -82,7 +77,7 @@ export default function Page() {
   }
 
   return (
-    <div className="bg-[#2B2B2B]">
+    <div className="bg-zinc-700 flex flex-col justify-center items-center">
       {/* <button className="m-10 font-3xl" onClick={getVariables}>
         Get Me The Data
       </button> */}
