@@ -50,7 +50,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
   }
   return (
     <div className="max-w-[1200px] mt-[50px] grid grid-cols-3 gap-3 mb-[60px] bg-zinc-600 px-[150px] pt-[20px] pb-[30px] rounded-md">
-      <div className="col-span-3 text-[#ffffff] text-[40px] font-semibold text-center">
+      <div className="col-span-3 text-[#ffffff] text-[40px] mb-4 font-semibold text-center">
         {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
       </div>
 
