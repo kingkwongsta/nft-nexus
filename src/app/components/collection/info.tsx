@@ -39,7 +39,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     return stat.map((stat, index) => {
       return (
         <div
-          className="flex justify-between bg-zinc-800 py-3 px-10 rounded-md"
+          className="flex justify-between bg-zinc-800 py-3 px-[25px] rounded-md"
           key={index}
         >
           <div className="text-[#FFFFFF] text-lg">{stat.metric}</div>
@@ -49,7 +49,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     });
   }
   return (
-    <div className="max-w-[1200px] mt-[50px] grid grid-cols-3 gap-3 mb-[60px] bg-zinc-600 px-[150px] py-[30px]">
+    <div className="max-w-[1200px] mt-[50px] grid grid-cols-3 gap-3 mb-[60px] bg-zinc-600 px-[150px] pt-[20px] pb-[30px] rounded-md">
       <div className="col-span-3 text-[#ffffff] text-[40px] font-semibold text-center">
         {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
       </div>
@@ -57,8 +57,8 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
       <Image
         className="col-span-1 rounded-md"
         src={nftInfo.contract.metadata.cached_thumbnail_url}
-        width={200}
-        height={200}
+        width={275}
+        height={275}
         alt="placeholder"
       />
 
