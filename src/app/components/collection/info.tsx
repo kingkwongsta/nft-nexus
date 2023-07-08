@@ -39,7 +39,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     return stat.map((stat, index) => {
       return (
         <div
-          className="flex justify-between bg-zinc-700	 min-w-[250px] px-4 py-3 rounded-md"
+          className="flex justify-between bg-zinc-700	min-w-[250px] px-4 py-3 rounded-md"
           key={index}
         >
           <div className="text-[#FFFFFF] capitalize text-lg">{stat.metric}</div>
