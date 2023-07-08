@@ -65,7 +65,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="flex flex-row mt-[50px] max-w-[1120px]">
+    <div className="flex flex-row max-w-[1120px]">
       {/* LEFT CONTENT */}
       <div className="basis-3/4 mr-12">
         <h1 className="text-5xl text-[#ffffff] font-[600] leading-tight font-semibold tracking-wider leading-none mb-10">
