@@ -19,7 +19,7 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <main className="bg-[#2B2B2B]">
+    <main className="bg-zinc-950">
       {/* <main className="bg-[#2B2B2B] flex flex-col items-center justify-center"> */}
       <Hero />
       <Popular />
