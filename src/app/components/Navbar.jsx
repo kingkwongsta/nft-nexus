@@ -1,12 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "./../../../public/logo.png";
 
 export default function Navbar() {
   return (
-    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+    <nav class="flex items-center justify-between flex-wrap bg-zinc-600 p-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="font-semibold text-xl tracking-tight">NFT Nexus</span>
-        <Image src={Logo} width={25} height={25} alt="logo" />
+        <Image
+          className="invert mx-[8px]"
+          src={Logo}
+          width={25}
+          height={25}
+          alt="logo"
+        />
       </div>
       <div class="block lg:hidden">
         <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
