@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Gallery from "../../components/collection/gallery";
 import Info from "@/app/components/collection/info";
 import { RootState, collectionType, salesType } from "../../../shared/types";
+import Navbar from "@/app/components/Navbar";
 
 export default function Page() {
   const path = usePathname();
