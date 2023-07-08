@@ -78,15 +78,18 @@ export default function Page() {
   }
 
   return (
-    <div className="bg-zinc-950	 flex flex-col justify-center items-center">
-      {/* <button className="m-10 font-3xl" onClick={getVariables}>
+    <div>
+      <Navbar />
+      <div className="bg-zinc-950	 flex flex-col justify-center items-center">
+        {/* <button className="m-10 font-3xl" onClick={getVariables}>
         Get Me The Data
       </button> */}
-      <div className="">
-        {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
-      </div>
-      <div className="flex flex-wrap justify-evenly justify-items-center">
-        {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
+        <div className="">
+          {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
+        </div>
+        <div className="flex flex-wrap justify-evenly justify-items-center">
+          {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
+        </div>
       </div>
     </div>
   );
