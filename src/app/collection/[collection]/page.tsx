@@ -77,7 +77,7 @@ export default function Page() {
   }
 
   return (
-    <div className="bg-zinc-700 flex flex-col justify-center items-center">
+    <div className="bg-cyan-950	 flex flex-col justify-center items-center">
       {/* <button className="m-10 font-3xl" onClick={getVariables}>
         Get Me The Data
       </button> */}
