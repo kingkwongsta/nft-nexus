@@ -1,6 +1,6 @@
 import clientPromise from "../index";
 
-let client, db, nfts;
+let client: any, db: any, nfts: any;
 
 async function init() {
   if (db) return;
