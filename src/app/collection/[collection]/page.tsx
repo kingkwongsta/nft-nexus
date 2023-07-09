@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Gallery from "../../components/collection/gallery";
 import Info from "@/app/components/collection/info";
 import { RootState, collectionType, salesType } from "../../../shared/types";
+import Navbar from "@/app/components/Navbar";
 
 export default function Page() {
   const path = usePathname();
@@ -77,15 +78,18 @@ export default function Page() {
   }
 
   return (
-    <div className="bg-zinc-700 flex flex-col justify-center items-center">
-      {/* <button className="m-10 font-3xl" onClick={getVariables}>
+    <div className="bg-zinc-950">
+      <Navbar />
+      <div className="flex flex-col justify-center items-center">
+        {/* <button className="m-10 font-3xl" onClick={getVariables}>
         Get Me The Data
       </button> */}
-      <div className="">
-        {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
-      </div>
-      <div className="flex flex-wrap justify-evenly justify-items-center">
-        {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
+        <div className="">
+          {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
+        </div>
+        <div className="flex flex-wrap justify-evenly justify-items-center">
+          {reduxNftData ? renderCollectionGallery() : <p>loading</p>}
+        </div>
       </div>
     </div>
   );
