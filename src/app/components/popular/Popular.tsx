@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import PopularCard from "./PopularCard";
 import PopularTemp from "./PopularTemp";
 import { useSelector } from "react-redux";
+import { RootState } from "@/shared/types";
 
 //main component to export
 const Popular = () => {
   const [loading, setLoading] = useState(true);
-  const topNftEth = useSelector((state) => state.topNftEth);
+  const topNftEth = useSelector((state: RootState) => state.topNftEth);
 
   //once store data changes status to succeeded, change loading state
   useEffect(() => {
