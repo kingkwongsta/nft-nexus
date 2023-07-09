@@ -1,4 +1,4 @@
-import { getData } from "./../../../../../lib/mongo/web3/eth_top_sales";
+import { getData } from "../../../../../lib/mongo/web3/eth_top_sales";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -8,5 +8,4 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json({ error });
   }
-  // return new Response("Hello, Next.js!");
 }
