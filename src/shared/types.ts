@@ -1,6 +1,7 @@
 import { TopNftEthState } from "@/redux/features/top-nft-eth/topNftEthSlice";
 
 export interface collectionType {
+  _id: string;
   total: number;
   nfts: Array<{
     cached_file_url: string;
