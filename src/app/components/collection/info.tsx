@@ -39,7 +39,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     return stat.map((stat, index) => {
       return (
         <div
-          className="flex justify-between bg-zinc-700	min-w-[250px] px-4 py-3 rounded-md"
+          className="flex justify-between bg-zinc-800	min-w-[250px] px-4 py-3 rounded-md"
           key={index}
         >
           <div className="text-[#FFFFFF] capitalize text-lg">{stat.metric}</div>
@@ -49,7 +49,7 @@ export default function Info({ salesInfo, nftInfo }: InfoProps) {
     });
   }
   return (
-    <div className="max-w-[1200px] grid grid-cols-3 gap-3 mb-[60px] bg-zinc-800 px-[150px] pt-[20px] pb-[30px] rounded-md">
+    <div className="max-w-[1200px] grid grid-cols-3 gap-3 mb-[60px] px-[150px] pt-[20px] pb-[30px] rounded-md">
       <div className="col-span-3 text-[#ffffff] text-[40px] mb-4 font-semibold text-center">
         {salesInfo.name.replace(/([A-Z])/g, " $1").trim()}
       </div>
