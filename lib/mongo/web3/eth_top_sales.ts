@@ -2,6 +2,7 @@ import clientPromise from "../index";
 
 let client: any, db: any, nfts: any;
 
+//Initialize connection to web3 database
 async function init(): Promise<void> {
   if (db) return;
   try {
@@ -17,12 +18,13 @@ async function init(): Promise<void> {
   await init();
 })();
 
+//Fetch data if database connection is initiated
 export async function getData(): Promise<{ nfts?: any[]; error?: string }> {
   try {
     if (!nfts) await init();
     const result = await nfts.find({}).toArray();
     return { nfts: result };
   } catch (error) {
-    return { error: "Failed to fetch transactions!" };
+    return { error: "Failed to fetch nft data" };
   }
 }
