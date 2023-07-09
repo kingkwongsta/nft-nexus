@@ -1,5 +1,7 @@
 import Image from "next/image";
-export default function Gallery({ nft }) {
+import { salesData } from "@/shared/types";
+
+export default function Gallery({ nft }: { nft: salesData }) {
   return (
     <div className="card mx-5 my-2">
       {nft.cached_file_url && (

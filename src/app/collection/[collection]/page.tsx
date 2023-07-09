@@ -5,6 +5,7 @@ import Gallery from "../../components/collection/gallery";
 import Info from "@/app/components/collection/info";
 import { RootState, collectionType, salesType } from "../../../shared/types";
 import Navbar from "@/app/components/Navbar";
+import { salesData } from "../../../shared/types";
 
 export default function Page() {
   const path = usePathname();
@@ -56,7 +57,7 @@ export default function Page() {
         .filter(
           (item: { cached_file_url: string }) => item.cached_file_url !== null
         )
-        .map((nft: Record<string, any>, index: number) => {
+        .map((nft: salesData, index: number) => {
           return <Gallery key={index} nft={nft} />;
         })
     );
