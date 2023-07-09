@@ -8,20 +8,18 @@ import Navbar from "@/app/components/Navbar";
 
 export default function Page() {
   const path = usePathname();
-  const cleanPath = path.replace("/collection/", "").replace("%20", " ");
+  let cleanPath: string = "";
+  if (path !== null) {
+    cleanPath = path.replace("/collection/", "").replace("%20", " ");
+  }
   const reduxNftData: collectionType[] | null = useSelector(
     (state: RootState) => state.topNftEth.topNftEthData
   );
 
-  // const nftIndex = reduxNftData
-  //   ? reduxNftData.findIndex((obj) => obj.contract.name === cleanPath)
-  //   : [];
   const reduxSalesData: salesType[] | null = useSelector(
     (state: RootState) => state.ethSales.salesData
   );
-  // const salesIndex = reduxSalesData
-  //   ? reduxSalesData.findIndex((obj) => obj.name === cleanPath)
-  //   : [];
+
   let nftIndex: number = 0;
   let salesIndex: number = 0;
 
@@ -33,10 +31,6 @@ export default function Page() {
       nftIndex = reduxNftData.findIndex(
         (obj) => obj.contract.name === cleanPath
       );
-      // if (nftIndex !== -1) {
-      //   nftCollection = reduxNftData[nftIndex].nfts.filter(
-      //     (item: { cached_file_url: string }) => item.cached_file_url !== null
-      //   );
       if (nftIndex !== -1) {
         nftCollection = reduxNftData[nftIndex];
       }
@@ -73,17 +67,10 @@ export default function Page() {
     return <Info salesInfo={salesItem} nftInfo={nftItem} />;
   }
 
-  function getVariables() {
-    console.log(getNFTProps());
-  }
-
   return (
     <div className="bg-zinc-950">
       <Navbar />
       <div className="flex flex-col justify-center items-center">
-        {/* <button className="m-10 font-3xl" onClick={getVariables}>
-        Get Me The Data
-      </button> */}
         <div className="">
           {reduxSalesData ? renderCollectionInfo() : <p>loading</p>}
         </div>
