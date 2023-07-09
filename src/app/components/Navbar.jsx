@@ -4,7 +4,7 @@ import Logo from "./../../../public/logo.png";
 
 export default function Navbar() {
   return (
-    <nav class="flex items-center justify-between flex-wrap bg-zinc-700 p-5">
+    <nav class="flex items-center justify-between flex-wrap bg-zinc-700 p-5 mb-10">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <Link href="/">
           <span class="font-semibold text-xl tracking-tight">NFT Nexus</span>
