@@ -84,8 +84,8 @@ export default function Hero() {
       </div>
       {/* RIGHT CONTENT */}
       <div className="basis-1/4 justify-center">
-        <div className="max-w-[400px] bg-zinc-800 rounded-xl lg:min-h-[400px]">
-          <div className="hero-img rounded-lg pt-10 px-16 w-[500px] "></div>
+        <div className="max-w-[400px] bg-zinc-800 rounded-xl lg:min-w-[360px]">
+          <div className="hero-img rounded-lg pt-10 px-16 w-[300px] "></div>
           {collectionData && collectionData[collectionIndex]?.contract && (
             <Link
               href={{
@@ -96,8 +96,8 @@ export default function Hero() {
               {storeLoading ? (
                 <Image
                   src={nftPlaceholder}
-                  width={300}
-                  height={300}
+                  width={250}
+                  height={250}
                   alt="heroImage"
                   className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
                 />
@@ -107,8 +107,8 @@ export default function Hero() {
                     collectionData[collectionIndex]?.contract.metadata
                       ?.cached_thumbnail_url ?? "no img"
                   }
-                  width={300}
-                  height={300}
+                  width={250}
+                  height={250}
                   alt="heroImage"
                   className="mx-auto rounded-lg w-full max-h-[300px] max-w-[300px]"
                 />
@@ -116,7 +116,7 @@ export default function Hero() {
             </Link>
           )}
           <div className="">
-            <h3 className=" mt-3 text-2xl font-semibold text-center text-[#ffffff]">
+            <h3 className=" mt-3 pb-3 text-2xl font-semibold text-center text-[#ffffff]">
               {storeLoading || !collectionData
                 ? "loading"
                 : collectionData[collectionIndex]?.contract.name}
