@@ -4,7 +4,7 @@ import Logo from "./../../../public/logo.png";
 
 export default function Navbar() {
   return (
-    <nav class="flex items-center justify-between flex-wrap bg-zinc-600 p-6">
+    <nav class="flex items-center justify-between flex-wrap bg-zinc-700 p-5">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <Link href="/">
           <span class="font-semibold text-xl tracking-tight">NFT Nexus</span>
@@ -52,14 +52,14 @@ export default function Navbar() {
             Blog
           </a>
         </div>
-        <div>
+        {/* <div>
           <a
             href="#"
             class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
           >
             Download
           </a>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
