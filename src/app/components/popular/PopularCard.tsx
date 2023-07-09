@@ -7,10 +7,8 @@ type contractCollectionType = collectionType["contract"];
 
 const PopularCard = ({
   collection,
-  nfts,
 }: {
   collection: contractCollectionType;
-  nfts: salesData[];
 }) => {
   return (
     <div className="mx-5 my-5 flex flex-col items-center min-h-[280px] min-w-[250px] max-w-[250px] rounded-lg px-3 py-1">

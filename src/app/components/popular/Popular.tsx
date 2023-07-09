@@ -4,6 +4,7 @@ import PopularCard from "./PopularCard";
 import PopularTemp from "./PopularTemp";
 import { useSelector } from "react-redux";
 import { RootState } from "@/shared/types";
+import { salesData } from "@/shared/types";
 
 //main component to export
 const Popular = () => {
@@ -43,7 +44,7 @@ const Popular = () => {
                   <PopularCard
                     key={item._id}
                     collection={item.contract}
-                    nfts={item.nfts}
+                    // nfts={item.nfts}
                   />
                 );
               })}
