@@ -4,7 +4,7 @@ import Logo from "./../../../public/logo.png";
 
 export default function Navbar() {
   return (
-    <nav class="flex items-center justify-between flex-wrap bg-zinc-700 p-5 mb-10">
+    <nav class="flex items-center justify-between flex-wrap bg-zinc-900 p-5 pl-[40px] mb-10">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <Link href="/">
           <span class="font-semibold text-xl tracking-tight">NFT Nexus</span>
@@ -33,24 +33,12 @@ export default function Navbar() {
       </div>
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-          <a
+          {/* <a
             href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 text-lg hover:text-white mr-4"
           >
-            Docs
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-          >
-            Examples
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
-          >
-            Blog
-          </a>
+            Popular
+          </a> */}
         </div>
         {/* <div>
           <a

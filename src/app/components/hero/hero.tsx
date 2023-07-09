@@ -84,7 +84,7 @@ export default function Hero() {
       </div>
       {/* RIGHT CONTENT */}
       <div className="basis-1/4 justify-center">
-        <div className="max-w-[400px] bg-zinc-700 rounded-xl lg:min-h-[400px]">
+        <div className="max-w-[400px] bg-zinc-800 rounded-xl lg:min-h-[400px]">
           <div className="hero-img rounded-lg pt-10 px-16 w-[500px] "></div>
           {collectionData && collectionData[collectionIndex]?.contract && (
             <Link
@@ -115,7 +115,7 @@ export default function Hero() {
               )}
             </Link>
           )}
-          <div className="bg-zinc-700 rounded-lg">
+          <div className="">
             <h3 className=" mt-3 text-2xl font-semibold text-center text-[#ffffff]">
               {storeLoading || !collectionData
                 ? "loading"
