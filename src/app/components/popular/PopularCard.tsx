@@ -1,8 +1,17 @@
-// "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { salesData } from "@/shared/types";
+import { collectionType } from "@/shared/types";
 
-const PopularCard = ({ collection, nfts }) => {
+type contractCollectionType = collectionType["contract"];
+
+const PopularCard = ({
+  collection,
+  nfts,
+}: {
+  collection: contractCollectionType;
+  nfts: salesData;
+}) => {
   return (
     <div className="mx-5 my-5 flex flex-col items-center min-h-[280px] min-w-[250px] max-w-[250px] rounded-lg px-3 py-1">
       {/* <Link href={`/collection/${collection.name}`}> */}
