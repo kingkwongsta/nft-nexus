@@ -4,17 +4,17 @@
 ### [Live Website](https://nft-nexus-git-main-kingkwongsta.vercel.app/)
 ---
 ### Tech Stack
-**Next.js**
+#### Next.js
 - App Router, SSR, API Routes
   
-Tailwind CSS
+#### Tailwind CSS
 - UX Styling
 
-Redux
+#### Redux
 - state management to fetch and store data for web app
 - longer initial load, but every subsequent page load is fast
 
-MongoDB
+#### MongoDB
 - store heavily nested NFT data object
 - data is populated by a [python script](https://github.com/kingkwongsta/nft_script), which pull data from [NFTPort](https://docs.nftport.xyz/reference/retrieve-contract-nfts)
 
