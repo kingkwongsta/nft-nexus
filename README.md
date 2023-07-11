@@ -1,8 +1,7 @@
 ## NFT NEXUS
 
-## Goal:  Browse the top NFTs on ETH
+### Explore an array of top NFTs handpicked for your viewing pleasure, immersing yourself in the realms of art, collectibles, and digital wonders, all at your fingertips.
 ### [Live Website](https://nft-nexus-git-main-kingkwongsta.vercel.app/)
-#### Work in progress
 ---
 #### Tech Stack
 - Next.js, Tailwind CSS, Redux, MongoDB
