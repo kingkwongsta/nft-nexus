@@ -23,12 +23,10 @@ export default function Home() {
   return (
     <main className="bg-zinc-950">
       <Navbar />
-      {/* <main className="bg-[#2B2B2B] flex flex-col items-center justify-center"> */}
       <div className="flex flex-col items-center justify-center">
         <Hero />
         <Popular />
       </div>
-      {/* <Test /> */}
     </main>
   );
 }
