@@ -7,6 +7,7 @@ interface InfoProps {
 }
 
 export default function Info({ salesInfo, nftInfo }: InfoProps) {
+  //Statistics Data to be populate
   const stat = [
     {
       metric: "Floor:",
