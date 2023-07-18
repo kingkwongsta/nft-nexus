@@ -31,6 +31,7 @@ export default function Hero() {
     collectionType[] | undefined
   >(undefined);
 
+  //Randomly change hero photo every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * 20);
